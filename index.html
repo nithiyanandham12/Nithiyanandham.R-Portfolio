@@ -432,8 +432,6 @@
             font-size: 1.1rem;
             color: var(--accent-primary);
             font-weight: 500;
-            border-right: 2px solid var(--accent-primary);
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
             white-space: nowrap;
             overflow: hidden;
         }
@@ -443,10 +441,7 @@
             to { width: 100%; }
         }
 
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: var(--accent-primary); }
-        }
+
 
         /* Navigation */
         nav {
