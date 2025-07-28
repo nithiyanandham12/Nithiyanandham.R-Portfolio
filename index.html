@@ -34,6 +34,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             min-height: 100vh;
+            font-size: 0.92rem;
         }
 
         /* Custom Scrollbar */
@@ -50,7 +51,7 @@
             border-radius: 4px;
         }
 
-        /* Elegant Subtle Background */
+        /* Dynamic AI Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -58,7 +59,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.3;
+            opacity: 0.5;
             overflow: hidden;
         }
 
@@ -70,9 +71,9 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
         }
 
         .bg-animation::after {
@@ -83,108 +84,138 @@
             width: 100%;
             height: 100%;
             background: 
-                linear-gradient(135deg, transparent 0%, rgba(99, 102, 241, 0.03) 50%, transparent 100%),
-                linear-gradient(45deg, transparent 0%, rgba(139, 92, 246, 0.02) 50%, transparent 100%);
+                linear-gradient(135deg, transparent 0%, rgba(99, 102, 241, 0.08) 50%, transparent 100%),
+                linear-gradient(45deg, transparent 0%, rgba(139, 92, 246, 0.05) 50%, transparent 100%);
         }
 
-        /* Subtle geometric patterns */
-        .bg-animation .geometric-shape {
+        /* AI Neural Network Nodes */
+        .ai-node {
             position: absolute;
-            opacity: 0.1;
-            animation: gentleFloat 30s ease-in-out infinite;
-        }
-
-        .bg-animation .geometric-shape.circle {
-            width: 200px;
-            height: 200px;
-            border: 2px solid var(--accent-primary);
-            border-radius: 50%;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .bg-animation .geometric-shape.square {
-            width: 150px;
-            height: 150px;
-            border: 2px solid var(--accent-secondary);
-            top: 60%;
-            right: 15%;
-            animation-delay: 10s;
-            transform: rotate(45deg);
-        }
-
-        .bg-animation .geometric-shape.triangle {
-            width: 0;
-            height: 0;
-            border-left: 100px solid transparent;
-            border-right: 100px solid transparent;
-            border-bottom: 173px solid var(--accent-tertiary);
-            top: 20%;
-            right: 20%;
-            animation-delay: 20s;
-            opacity: 0.08;
-        }
-
-        .bg-animation .geometric-shape.hexagon {
-            width: 120px;
-            height: 120px;
+            width: 8px;
+            height: 8px;
             background: var(--accent-primary);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            bottom: 15%;
-            left: 20%;
-            animation-delay: 15s;
-            opacity: 0.06;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: aiFloat 15s ease-in-out infinite;
+            box-shadow: 0 0 15px var(--accent-primary);
+        }
+
+        .ai-node::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 3px;
+            height: 3px;
+            background: var(--accent-secondary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Data Flow Lines */
+        .data-flow {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+            opacity: 0.4;
+            animation: dataFlow 12s linear infinite;
+        }
+
+        /* Matrix Rain Effect */
+        .matrix-rain {
+            position: absolute;
+            color: var(--accent-primary);
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            opacity: 0.15;
+            animation: matrixRain 6s linear infinite;
+        }
+
+        /* AI Circuit Patterns */
+        .circuit-line {
+            position: absolute;
+            background: var(--accent-secondary);
+            opacity: 0.3;
+            animation: circuitFlow 20s ease-in-out infinite;
+        }
+
+        /* Floating AI Elements */
+        .ai-element {
+            position: absolute;
+            opacity: 0.2;
+            animation: aiFloat 25s ease-in-out infinite;
+        }
+
+        .ai-element.brain {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, var(--accent-primary) 30%, transparent 30%);
+            border-radius: 50%;
+        }
+
+        .ai-element.chip {
+            width: 35px;
+            height: 35px;
+            background: var(--accent-tertiary);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+        }
+
+        .ai-element.neural {
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, var(--accent-primary) 20%, transparent 20%);
+            background-size: 8px 8px;
         }
 
         /* AI-themed dynamic particles */
         .bg-animation .ai-particle {
             position: absolute;
-            opacity: 0.4;
-            animation: aiFloat 20s linear infinite;
+            opacity: 0.6;
+            animation: aiFloat 18s linear infinite;
             pointer-events: none;
             z-index: 1;
         }
 
         /* Neural network nodes */
         .bg-animation .ai-particle.neural-node {
-            width: 6px;
-            height: 6px;
+            width: 8px;
+            height: 8px;
             background: var(--accent-primary);
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-primary);
+            box-shadow: 0 0 15px var(--accent-primary);
         }
 
         /* Data points */
         .bg-animation .ai-particle.data-point {
-            width: 4px;
-            height: 4px;
+            width: 6px;
+            height: 6px;
             background: var(--accent-secondary);
             border-radius: 50%;
-            box-shadow: 0 0 8px var(--accent-secondary);
+            box-shadow: 0 0 12px var(--accent-secondary);
         }
 
         /* Binary code particles */
         .bg-animation .ai-particle.binary {
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             background: var(--accent-tertiary);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            box-shadow: 0 0 12px var(--accent-tertiary);
+            box-shadow: 0 0 18px var(--accent-tertiary);
         }
 
         /* Circuit connections */
         .bg-animation .ai-particle.circuit {
-            width: 2px;
-            height: 20px;
+            width: 3px;
+            height: 25px;
             background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
-            border-radius: 1px;
+            border-radius: 2px;
         }
 
         /* AI brain particles */
         .bg-animation .ai-particle.brain {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             background: var(--accent-primary);
             border-radius: 50%;
             position: relative;
@@ -193,8 +224,8 @@
         .bg-animation .ai-particle.brain::before {
             content: '';
             position: absolute;
-            top: 2px;
-            left: 2px;
+            top: 3px;
+            left: 3px;
             width: 6px;
             height: 6px;
             background: var(--accent-secondary);
@@ -203,11 +234,11 @@
 
         /* Matrix rain effect */
         .bg-animation .ai-particle.matrix {
-            width: 2px;
-            height: 15px;
+            width: 3px;
+            height: 20px;
             background: var(--accent-primary);
-            opacity: 0.4;
-            animation: matrixRain 8s linear infinite;
+            opacity: 0.5;
+            animation: matrixRain 7s linear infinite;
         }
 
         @keyframes aiFloat {
@@ -216,11 +247,11 @@
                 opacity: 0;
             }
             10% {
-                opacity: 0.3;
+                opacity: 0.6;
                 transform: scale(1);
             }
             90% {
-                opacity: 0.3;
+                opacity: 0.6;
                 transform: scale(1);
             }
             100% {
@@ -235,14 +266,59 @@
                 opacity: 0;
             }
             10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        @keyframes dataFlow {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            10% {
                 opacity: 0.4;
             }
             90% {
                 opacity: 0.4;
             }
             100% {
-                transform: translateY(100vh);
+                transform: translateX(calc(100vw + 100px));
                 opacity: 0;
+            }
+        }
+
+        @keyframes circuitFlow {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(calc(100vh + 50px)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 1;
             }
         }
 
@@ -440,14 +516,15 @@
 
         /* Container */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
 
         /* Sections */
         section {
-            margin-bottom: 100px;
+            margin-bottom: 60px;
+            padding: 30px 0;
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -458,20 +535,19 @@
             transform: translateY(0);
         }
 
-        /* Enhanced scroll animations with persistent effects */
+        /* Clean scroll animations without glitches */
         .card, .project-card, .skill-category, .timeline-item, .cert-item, .contact-item, .about-card, .achievement-card, .summary-card {
             opacity: 0;
-            transform: translateY(50px) scale(0.95);
-            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            filter: blur(2px);
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
         }
 
         .card.visible, .project-card.visible, .skill-category.visible, 
         .timeline-item.visible, .cert-item.visible, .contact-item.visible, .about-card.visible, 
         .achievement-card.visible, .summary-card.visible {
             opacity: 1;
-            transform: translateY(0) scale(1);
-            filter: blur(0px);
+            transform: translateY(0);
         }
 
         /* Staggered animations for grid items */
@@ -500,45 +576,24 @@
         .card-grid .project-card:nth-child(5) { transition-delay: 0.5s; }
         .card-grid .project-card:nth-child(6) { transition-delay: 0.6s; }
 
-        /* Continuous hover animations */
+        /* Smooth hover animations */
         .card:hover, .project-card:hover, .skill-category:hover, 
         .timeline-item:hover, .cert-item:hover, .contact-item:hover, 
         .about-card:hover, .achievement-card:hover, .summary-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(99, 102, 241, 0.2);
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 15px rgba(99, 102, 241, 0.1);
         }
 
-        /* Floating animation for visible elements */
+        /* Subtle glow for visible elements */
         .card.visible, .project-card.visible, .skill-category.visible, 
         .timeline-item.visible, .cert-item.visible, .contact-item.visible, 
         .about-card.visible, .achievement-card.visible, .summary-card.visible {
-            animation: gentleFloat 6s ease-in-out infinite;
-        }
-
-        @keyframes gentleFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-        }
-
-        /* Glow effect for visible elements */
-        .card.visible, .project-card.visible, .skill-category.visible, 
-        .timeline-item.visible, .cert-item.visible, .contact-item.visible, 
-        .about-card.visible, .achievement-card.visible, .summary-card.visible {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(99, 102, 241, 0.1);
-        }
-
-        /* Enhanced hover effects for visible elements */
-        .card.visible:hover, .project-card.visible:hover, .skill-category.visible:hover, 
-        .timeline-item.visible:hover, .cert-item.visible:hover, .contact-item.visible:hover, 
-        .about-card.visible:hover, .achievement-card.visible:hover, .summary-card.visible:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(99, 102, 241, 0.3);
-            animation: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), 0 0 15px rgba(99, 102, 241, 0.08);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .section-title {
@@ -561,9 +616,9 @@
         /* About Section */
         .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .about-card {
@@ -571,7 +626,7 @@
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
-            padding: 30px;
+            padding: 35px;
             text-align: center;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
@@ -594,8 +649,8 @@
         }
 
         .about-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(99, 102, 241, 0.2);
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 15px rgba(99, 102, 241, 0.1);
             border-color: var(--accent-primary);
         }
 
@@ -624,9 +679,9 @@
         /* Achievements Section */
         .achievements-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .achievement-card {
@@ -634,7 +689,7 @@
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
-            padding: 25px;
+            padding: 30px;
             text-align: center;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
@@ -657,8 +712,8 @@
         }
 
         .achievement-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(99, 102, 241, 0.2);
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 15px rgba(99, 102, 241, 0.1);
             border-color: var(--accent-primary);
         }
 
@@ -683,6 +738,8 @@
             line-height: 1.6;
             font-size: 0.9rem;
         }
+
+
 
         /* Summary Section */
         .summary-card {
@@ -716,8 +773,8 @@
         }
 
         .summary-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(99, 102, 241, 0.2);
+            transform: translateY(-2px) scale(1.005);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 15px rgba(99, 102, 241, 0.1);
             border-color: var(--accent-primary);
         }
 
@@ -771,8 +828,8 @@
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .card {
@@ -1361,24 +1418,45 @@
     </style>
 </head>
 <body>
-    <div class="bg-animation">
-        <div class="geometric-shape circle"></div>
-        <div class="geometric-shape square"></div>
-        <div class="geometric-shape triangle"></div>
-        <div class="geometric-shape hexagon"></div>
-    </div>
+            <div class="bg-animation">
+            <!-- AI Neural Network Nodes -->
+            <div class="ai-node" style="top: 15%; left: 20%; animation-delay: 0s;"></div>
+            <div class="ai-node" style="top: 25%; left: 80%; animation-delay: 3s;"></div>
+            <div class="ai-node" style="top: 60%; left: 15%; animation-delay: 6s;"></div>
+            <div class="ai-node" style="top: 70%; left: 75%; animation-delay: 9s;"></div>
+            
+            <!-- Data Flow Lines -->
+            <div class="data-flow" style="top: 30%; width: 200px; animation-delay: 2s;"></div>
+            <div class="data-flow" style="top: 50%; width: 150px; animation-delay: 5s;"></div>
+            <div class="data-flow" style="top: 80%; width: 180px; animation-delay: 8s;"></div>
+            
+            <!-- Matrix Rain -->
+            <div class="matrix-rain" style="top: 10%; left: 10%; animation-delay: 1s;">01</div>
+            <div class="matrix-rain" style="top: 20%; left: 30%; animation-delay: 4s;">10</div>
+            <div class="matrix-rain" style="top: 40%; left: 60%; animation-delay: 7s;">11</div>
+            <div class="matrix-rain" style="top: 60%; left: 85%; animation-delay: 10s;">00</div>
+            
+            <!-- Circuit Lines -->
+            <div class="circuit-line" style="top: 20%; left: 40%; width: 3px; height: 80px; animation-delay: 2s;"></div>
+            <div class="circuit-line" style="top: 45%; left: 70%; width: 3px; height: 60px; animation-delay: 6s;"></div>
+            
+            <!-- AI Elements -->
+            <div class="ai-element brain" style="top: 25%; left: 60%; animation-delay: 4s;"></div>
+            <div class="ai-element chip" style="top: 55%; left: 25%; animation-delay: 8s;"></div>
+            <div class="ai-element neural" style="top: 75%; left: 65%; animation-delay: 12s;"></div>
+        </div>
     
     <nav>
         <div class="nav-container">
             <div class="nav-logo">NR</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
+                                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -1519,7 +1597,8 @@
                         <span class="skill-tag">Watsonx.ai</span>
                         <span class="skill-tag">Watson Assistant</span>
                         <span class="skill-tag">Watson Discovery</span>
-                        <span class="skill-tag">Speech-to-Text</span>
+                        <span class="skill-tag">Watsonx Orchestrate</span>
+                        <span class="skill-tag">STT (Speech-to-Text)</span>
                     </div>
                 </div>
                 <div class="skill-category slide-in-left">
@@ -1532,8 +1611,9 @@
                     </div>
                 </div>
                 <div class="skill-category slide-in-right">
-                    <h3><i class="fas fa-cogs"></i> Automation & OCR</h3>
+                    <h3><i class="fas fa-cogs"></i> Automation & Workflows</h3>
                     <div class="skill-tags">
+                        <span class="skill-tag">n8n</span>
                         <span class="skill-tag">OCR</span>
                         <span class="skill-tag">Document Automation</span>
                         <span class="skill-tag">Workflow Design</span>
@@ -1554,9 +1634,12 @@
                         <h3 class="timeline-title">Team Lead - Data & AI Engineer</h3>
                         <p class="timeline-company">SBA Info Solutions, Chennai (January 2024 – Present)</p>
                         <ul class="timeline-description">
-                            <li>Led a diverse team to deliver AI projects and real-time POCs</li>
-                            <li>Designed and deployed Generative AI chatbots with IBM Watson Assistant</li>
-                            <li>Automated document workflows with IBM Datacap and Watson Discovery</li>
+                            <li>Successfully led diverse teams to deliver real-time POCs and client-ready AI projects, consistently meeting deadlines and quality standards</li>
+                            <li>Designed and deployed Generative AI chatbots and voice bots using IBM Watson Assistant, handling over 1,000 daily queries and improving customer response times by 50%</li>
+                            <li>Developed and integrated sophisticated AI agents to automate complex workflows and enhance operational efficiency</li>
+                            <li>Built and deployed custom AI models with Watsonx.ai for predictive analytics, boosting forecasting accuracy by 25%</li>
+                            <li>Developed and delivered Streamlit dashboards to visualize client data, enhancing decision-making processes</li>
+                            <li>Automated document extraction and indexing workflows using IBM Datacap and Watson Discovery, increasing processing efficiency by 40%</li>
                         </ul>
                     </div>
                 </div>
@@ -1565,8 +1648,11 @@
                         <h3 class="timeline-title">Artificial Intelligence Intern</h3>
                         <p class="timeline-company">Imagecon India Pvt (January 2023 – January 2024)</p>
                         <ul class="timeline-description">
-                            <li>Developed machine learning projects for image classification and text analytics</li>
-                            <li>Built Python-based GUI applications and collaborated on NLP solutions</li>
+                            <li>Contributed to the development and deployment of machine learning projects for image classification and text analytics, achieving over 90% accuracy on deliverables</li>
+                            <li>Built Python-based GUI applications using Tkinter, including data entry tools and task management systems</li>
+                            <li>Collaborated with senior engineers to design and implement NLP solutions for text classification and sentiment analysis using Hugging Face Transformers</li>
+                            <li>Developed a deep learning image classification project using CNNs, achieving high accuracy on test data</li>
+                            <li>Supported team efforts in debugging and optimizing project pipelines to ensure smooth deployment</li>
                         </ul>
                     </div>
                 </div>
@@ -1646,6 +1732,41 @@
                     </div>
                     <p class="project-impact">Reduced processing time by 40% and enhanced accuracy in data extraction.</p>
                 </div>
+
+                <div class="project-card slide-in-left">
+                    <h3 class="project-title">Legal Document Analysis</h3>
+                    <p class="project-description">Developed a hybrid AI solution supporting Indian regional languages and utilizing advanced document analysis and section-wise prompting for enhanced data extraction accuracy.</p>
+                    <div class="project-tools">
+                        <span class="project-tool">Python</span>
+                        <span class="project-tool">Watson Discovery</span>
+                        <span class="project-tool">NLP</span>
+                        <span class="project-tool">Regional Languages</span>
+                    </div>
+                    <p class="project-impact">Implemented robust QC workflow with integrated pre-built forms and report management capabilities.</p>
+                </div>
+
+                <div class="project-card slide-in-right">
+                    <h3 class="project-title">Image Classification with CNN</h3>
+                    <p class="project-description">Developed a deep learning model for multi-class image classification using TensorFlow, achieving 94% validation accuracy.</p>
+                    <div class="project-tools">
+                        <span class="project-tool">TensorFlow</span>
+                        <span class="project-tool">Python</span>
+                        <span class="project-tool">CNN</span>
+                        <span class="project-tool">Deep Learning</span>
+                    </div>
+                    <p class="project-impact">Achieved 94% validation accuracy on multi-class image classification tasks.</p>
+                </div>
+
+                <div class="project-card slide-in-left">
+                    <h3 class="project-title">GUI Tools for Task Management</h3>
+                    <p class="project-description">Created Tkinter-based GUI tools, including a to-do list application and a data entry form, improving internal workflows.</p>
+                    <div class="project-tools">
+                        <span class="project-tool">Python</span>
+                        <span class="project-tool">Tkinter</span>
+                        <span class="project-tool">GUI Development</span>
+                    </div>
+                    <p class="project-impact">Improved internal workflows and task management efficiency.</p>
+                </div>
             </div>
         </section>
 
@@ -1709,8 +1830,73 @@
                         <p>Imagecon Academy</p>
                     </div>
                 </div>
+                <div class="cert-item slide-in-left">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>IBM Watson Assistant Badge</h4>
+                        <p>IBM</p>
+                    </div>
+                </div>
+                <div class="cert-item slide-in-right">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>IBM Watson Discovery Badge</h4>
+                        <p>IBM</p>
+                    </div>
+                </div>
+                <div class="cert-item slide-in-left">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>IBM Planning Analytics Badge</h4>
+                        <p>IBM</p>
+                    </div>
+                </div>
+                <div class="cert-item slide-in-right">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Instana Application Performance Monitoring</h4>
+                        <p>IBM</p>
+                    </div>
+                </div>
+                <div class="cert-item slide-in-left">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>The Fundamentals of Digital Marketing</h4>
+                        <p>Google Digital Unlock</p>
+                    </div>
+                </div>
+                <div class="cert-item slide-in-right">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Python Fundamentals</h4>
+                        <p>Great Learning</p>
+                    </div>
+                </div>
+                <div class="cert-item slide-in-left">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Python Proficiency Certificate</h4>
+                        <p>MIMO App</p>
+                    </div>
+                </div>
             </div>
         </section>
+
+
 
         <section id="summary" class="fade-in">
             <div class="section-header">
@@ -1802,9 +1988,9 @@
     </footer>
 
     <script>
-        // Enhanced Intersection Observer with dynamic animations
+        // Clean Intersection Observer for smooth animations
         const observerOptions = {
-            threshold: [0, 0.1, 0.5, 1],
+            threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
@@ -1812,10 +1998,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Add a subtle pulse effect when element comes into view
-                    entry.target.style.animation = 'pulseGlow 1s ease-out';
                 } else {
-                    // Remove visible class when element goes out of view
                     entry.target.classList.remove('visible');
                 }
             });
@@ -1825,17 +2008,6 @@
         document.querySelectorAll('section, .card, .project-card, .skill-category, .timeline-item, .cert-item, .contact-item, .about-card, .achievement-card, .summary-card').forEach(element => {
             observer.observe(element);
         });
-
-        // Add pulse glow animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes pulseGlow {
-                0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
-                70% { box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
-                100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
-            }
-        `;
-        document.head.appendChild(style);
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
@@ -1931,21 +2103,13 @@
             });
         });
 
-        // Subtle parallax effect for background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.bg-animation');
-            const speed = scrolled * 0.1;
-            parallax.style.transform = `translateY(${speed}px)`;
-        });
-
-        // Gentle mouse interaction with background
+        // Gentle mouse interaction with background (no parallax)
         document.addEventListener('mousemove', (e) => {
             const bgAnimation = document.querySelector('.bg-animation');
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
             
-            bgAnimation.style.transform = `translateY(${window.pageYOffset * 0.1}px) rotateX(${y * 2}deg) rotateY(${x * 2}deg)`;
+            bgAnimation.style.transform = `rotateX(${y * 2}deg) rotateY(${x * 2}deg)`;
         });
 
         // AI-themed particle creation
