@@ -1265,6 +1265,30 @@
             color: var(--accent-primary);
         }
 
+        .contact-item .copy-btn {
+            background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact-item .copy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .contact-item .copy-btn.copied {
+            background: linear-gradient(45deg, #10b981, #059669);
+        }
+
         /* Footer */
         footer {
             background: rgba(10, 10, 10, 0.9);
@@ -1550,6 +1574,20 @@
                     <h3>Real-time Dashboards</h3>
                     <p>Built React-based and Streamlit dashboards for real-time data insights</p>
                 </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>AI Agent Integration</h3>
+                    <p>Successfully integrated AI agents across multiple platforms for automated workflow orchestration</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Multi-language Support</h3>
+                    <p>Implemented AI solutions supporting English, Hindi, and Tamil languages for regional accessibility</p>
+                </div>
             </div>
         </section>
 
@@ -1613,6 +1651,26 @@
                         <span class="skill-tag">Document Automation</span>
                         <span class="skill-tag">Workflow Design</span>
                         <span class="skill-tag">MLOps</span>
+                    </div>
+                </div>
+                <div class="skill-category slide-in-left">
+                    <h3><i class="fas fa-file-alt"></i> Document Processing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">IBM Datacap</span>
+                        <span class="skill-tag">Document Automation</span>
+                        <span class="skill-tag">Entity Extraction</span>
+                        <span class="skill-tag">Legal Documents</span>
+                        <span class="skill-tag">Regional Languages</span>
+                    </div>
+                </div>
+                <div class="skill-category slide-in-right">
+                    <h3><i class="fas fa-video"></i> Media & Content</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Video Processing</span>
+                        <span class="skill-tag">Transcription</span>
+                        <span class="skill-tag">Content Analytics</span>
+                        <span class="skill-tag">Semantic Search</span>
+                        <span class="skill-tag">Image Classification</span>
                     </div>
                 </div>
             </div>
@@ -1939,6 +1997,9 @@
                     </div>
                     <h3>Email</h3>
                     <a href="mailto:nithiyanandham1509@gmail.com">nithiyanandham1509@gmail.com</a>
+                    <button class="copy-btn" data-text="nithiyanandham1509@gmail.com">
+                        <i class="fas fa-copy"></i> Copy Email
+                    </button>
                 </div>
                 <div class="contact-item slide-in-right">
                     <div class="contact-icon">
@@ -1946,6 +2007,9 @@
                     </div>
                     <h3>Phone</h3>
                     <a href="tel:+919629618273">+91 9629618273</a>
+                    <button class="copy-btn" data-text="+91 9629618273">
+                        <i class="fas fa-copy"></i> Copy Phone
+                    </button>
                 </div>
                 <div class="contact-item slide-in-left">
                     <div class="contact-icon">
@@ -1953,6 +2017,9 @@
                     </div>
                     <h3>LinkedIn</h3>
                     <a href="https://www.linkedin.com/in/nithiyanandham-r-23094092" target="_blank">linkedin.com/in/nithiyanandham-r-23094092</a>
+                    <button class="copy-btn" data-text="https://www.linkedin.com/in/nithiyanandham-r-23094092">
+                        <i class="fas fa-copy"></i> Copy LinkedIn
+                    </button>
                 </div>
                 <div class="contact-item slide-in-right">
                     <div class="contact-icon">
@@ -1960,6 +2027,9 @@
                     </div>
                     <h3>GitHub</h3>
                     <a href="https://github.com/nithiyananandham12" target="_blank">github.com/nithiyananandham12</a>
+                    <button class="copy-btn" data-text="https://github.com/nithiyananandham12">
+                        <i class="fas fa-copy"></i> Copy GitHub
+                    </button>
                 </div>
             </div>
         </section>
@@ -2153,6 +2223,47 @@
             for (let i = 0; i < 5; i++) {
                 setTimeout(() => createAIParticle(), i * 1000);
             }
+        });
+
+        // Copy functionality for contact buttons
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', async function() {
+                const textToCopy = this.getAttribute('data-text');
+                const originalText = this.innerHTML;
+                
+                try {
+                    await navigator.clipboard.writeText(textToCopy);
+                    
+                    // Visual feedback
+                    this.classList.add('copied');
+                    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    
+                    // Reset after 2 seconds
+                    setTimeout(() => {
+                        this.classList.remove('copied');
+                        this.innerHTML = originalText;
+                    }, 2000);
+                    
+                } catch (err) {
+                    // Fallback for older browsers
+                    const textArea = document.createElement('textarea');
+                    textArea.value = textToCopy;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    
+                    // Visual feedback
+                    this.classList.add('copied');
+                    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    
+                    // Reset after 2 seconds
+                    setTimeout(() => {
+                        this.classList.remove('copied');
+                        this.innerHTML = originalText;
+                    }, 2000);
+                }
+            });
         });
 
         // Initialize animations after page load
