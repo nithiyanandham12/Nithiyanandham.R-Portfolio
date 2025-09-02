@@ -3603,6 +3603,20 @@
             align-items: center;
             justify-content: center;
         }
+        
+        /* Mobile responsive modal overlay */
+        @media (max-width: 768px) {
+            .modal-overlay {
+                align-items: flex-start;
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .modal-overlay {
+                padding: 5px;
+            }
+        }
 
         .modal-overlay.active {
             opacity: 1;
@@ -3620,6 +3634,57 @@
             transform: scale(0.8);
             transition: all 0.3s ease;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Mobile responsive modal */
+        @media (max-width: 768px) {
+            .modal-container {
+                width: 95vw;
+                max-height: 95vh;
+                border-radius: 15px;
+                margin: 10px;
+            }
+            
+            .modal-header {
+                padding: 20px;
+            }
+            
+            .modal-title {
+                font-size: 1.3rem;
+            }
+            
+            .modal-body {
+                padding: 20px;
+                max-height: 75vh;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .modal-container {
+                width: 98vw;
+                max-height: 98vh;
+                border-radius: 12px;
+                margin: 5px;
+            }
+            
+            .modal-header {
+                padding: 15px;
+            }
+            
+            .modal-title {
+                font-size: 1.2rem;
+            }
+            
+            .modal-body {
+                padding: 15px;
+                max-height: 80vh;
+            }
+            
+            .modal-close {
+                width: 35px;
+                height: 35px;
+                font-size: 1.3rem;
+            }
         }
 
         .modal-overlay.active .modal-container {
@@ -4671,6 +4736,86 @@
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
+        
+        /* Mobile responsive demo container */
+        @media (max-width: 768px) {
+            .demo-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .live-demo-section {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .live-demo-section h4 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+            
+            .customer-side h5,
+            .ai-processing h5 {
+                font-size: 0.95rem;
+                margin-bottom: 12px;
+            }
+            
+            .call-status {
+                margin-bottom: 15px;
+            }
+            
+            .customer-query {
+                padding: 12px;
+            }
+            
+            .processing-steps {
+                gap: 10px;
+            }
+            
+            .processing-step {
+                padding: 10px;
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .demo-container {
+                gap: 15px;
+            }
+            
+            .live-demo-section {
+                padding: 12px;
+                margin-bottom: 12px;
+            }
+            
+            .live-demo-section h4 {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+            
+            .customer-side h5,
+            .ai-processing h5 {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+            
+            .call-status {
+                margin-bottom: 12px;
+            }
+            
+            .customer-query {
+                padding: 10px;
+            }
+            
+            .processing-steps {
+                gap: 8px;
+            }
+            
+            .processing-step {
+                padding: 8px;
+                gap: 8px;
+            }
+        }
 
         .customer-side h5,
         .ai-processing h5 {
@@ -4740,6 +4885,47 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
+        
+        /* Mobile responsive processing steps */
+        @media (max-width: 768px) {
+            .processing-step {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                gap: 8px;
+            }
+            
+            .step-icon {
+                font-size: 1.2rem;
+            }
+            
+            .step-title {
+                font-size: 0.9rem;
+            }
+            
+            .step-status {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .processing-step {
+                padding: 8px;
+                gap: 6px;
+            }
+            
+            .step-icon {
+                font-size: 1.1rem;
+            }
+            
+            .step-title {
+                font-size: 0.85rem;
+            }
+            
+            .step-status {
+                font-size: 0.75rem;
+            }
+        }
 
         .processing-step.active {
             border-left: 4px solid var(--accent-primary);
@@ -4792,6 +4978,76 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
+        }
+        
+        /* Mobile responsive CRM integration */
+        @media (max-width: 768px) {
+            .crm-integration {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .crm-integration h4 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+            
+            .crm-dashboard {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .crm-section {
+                padding: 12px;
+            }
+            
+            .crm-section h6 {
+                font-size: 0.85rem;
+                margin-bottom: 12px;
+            }
+            
+            .info-row {
+                padding: 6px 0;
+            }
+            
+            .info-row .label,
+            .info-row .value {
+                font-size: 0.75rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .crm-integration {
+                padding: 12px;
+                margin-bottom: 12px;
+            }
+            
+            .crm-integration h4 {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+            
+            .crm-dashboard {
+                gap: 12px;
+            }
+            
+            .crm-section {
+                padding: 10px;
+            }
+            
+            .crm-section h6 {
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+            
+            .info-row {
+                padding: 5px 0;
+            }
+            
+            .info-row .label,
+            .info-row .value {
+                font-size: 0.7rem;
+            }
         }
 
         .crm-section {
@@ -6571,6 +6827,77 @@
             flex: 1;
             line-height: 1.4;
         }
+        
+        /* Mobile responsive progress bars and demo elements */
+        @media (max-width: 768px) {
+            .progress-bar {
+                width: 80px;
+                height: 5px;
+            }
+            
+            .transcription-section {
+                padding: 15px;
+            }
+            
+            .transcription-section h4 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+            
+            .transcript-line {
+                padding: 8px;
+                gap: 10px;
+            }
+            
+            .timestamp {
+                min-width: 35px;
+                font-size: 0.75rem;
+            }
+            
+            .speaker {
+                min-width: 55px;
+                font-size: 0.9rem;
+            }
+            
+            .text {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .progress-bar {
+                width: 70px;
+                height: 4px;
+            }
+            
+            .transcription-section {
+                padding: 12px;
+            }
+            
+            .transcription-section h4 {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+            
+            .transcript-line {
+                padding: 6px;
+                gap: 8px;
+            }
+            
+            .timestamp {
+                min-width: 30px;
+                font-size: 0.7rem;
+            }
+            
+            .speaker {
+                min-width: 50px;
+                font-size: 0.85rem;
+            }
+            
+            .text {
+                font-size: 0.8rem;
+            }
+        }
 
         .ai-insights-section {
             background: rgba(255, 255, 255, 0.05);
@@ -6589,6 +6916,49 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+        }
+        
+        /* Mobile responsive AI insights */
+        @media (max-width: 768px) {
+            .ai-insights-section {
+                padding: 15px;
+                margin-top: 15px;
+            }
+            
+            .ai-insights-section h4 {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+            
+            .insights-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .insight-card {
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .ai-insights-section {
+                padding: 12px;
+                margin-top: 12px;
+            }
+            
+            .ai-insights-section h4 {
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+            }
+            
+            .insights-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .insight-card {
+                padding: 10px;
+            }
         }
 
         .insight-card {
