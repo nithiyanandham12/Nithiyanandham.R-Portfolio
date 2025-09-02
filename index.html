@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Nithiyanandham R - Data & AI Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -3415,6 +3415,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            /* iOS Safari specific fixes */
+            -webkit-overflow-scrolling: touch;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
         }
 
         .modal-overlay.active {
@@ -3433,10 +3437,19 @@
             transform: scale(0.8);
             transition: all 0.3s ease;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            /* iOS Safari specific fixes */
+            -webkit-overflow-scrolling: touch;
+            -webkit-transform: translateZ(0) scale(0.8);
+            transform: translateZ(0) scale(0.8);
+            /* Prevent iOS zoom issues */
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
         }
 
         .modal-overlay.active .modal-container {
             transform: scale(1);
+            -webkit-transform: translateZ(0) scale(1);
         }
 
         .modal-header {
@@ -3481,6 +3494,10 @@
             max-height: 70vh;
             overflow-y: auto;
             color: var(--text-primary);
+            /* iOS Safari scrolling fixes */
+            -webkit-overflow-scrolling: touch;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
         }
 
         /* Mobile responsive FAB */
@@ -3531,6 +3548,23 @@
 
             .modal-body {
                 padding: 20px;
+            }
+
+            /* iOS Safari specific mobile fixes */
+            .modal-overlay {
+                -webkit-overflow-scrolling: touch;
+                -webkit-transform: translateZ(0);
+            }
+
+            .modal-container {
+                -webkit-overflow-scrolling: touch;
+                -webkit-transform: translateZ(0) scale(0.8);
+                transform: translateZ(0) scale(0.8);
+            }
+
+            .modal-overlay.active .modal-container {
+                -webkit-transform: translateZ(0) scale(1);
+                transform: translateZ(0) scale(1);
             }
         }
 
@@ -7009,13 +7043,45 @@ LinkedIn: https://www.linkedin.com/in/nithiyanandham-r-23094092`;
             function showModal(title, content) {
                 modalTitle.textContent = title;
                 modalBody.innerHTML = content;
+                
+                // iOS Safari specific fixes
+                modalOverlay.style.display = 'flex';
+                modalOverlay.style.webkitTransform = 'translateZ(0)';
+                modalOverlay.style.transform = 'translateZ(0)';
+                
+                // Force reflow for iOS
+                modalOverlay.offsetHeight;
+                
                 modalOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
+                
+                // iOS Safari viewport fix
+                if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                    const viewport = document.querySelector('meta[name=viewport]');
+                    if (viewport) {
+                        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+                    }
+                }
             }
 
             function hideModal() {
                 modalOverlay.classList.remove('active');
                 document.body.style.overflow = '';
+                
+                // iOS Safari specific cleanup
+                setTimeout(() => {
+                    if (!modalOverlay.classList.contains('active')) {
+                        modalOverlay.style.display = 'none';
+                    }
+                }, 300);
+                
+                // Restore viewport for iOS
+                if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                    const viewport = document.querySelector('meta[name=viewport]');
+                    if (viewport) {
+                        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+                    }
+                }
             }
 
             // Close modal events
@@ -7025,6 +7091,17 @@ LinkedIn: https://www.linkedin.com/in/nithiyanandham-r-23094092`;
                     hideModal();
                 }
             });
+
+            // iOS Safari touch event handling
+            if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                modalOverlay.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                }, { passive: false });
+                
+                modalContainer.addEventListener('touchstart', function(e) {
+                    e.stopPropagation();
+                }, { passive: false });
+            }
 
             // Close modal on escape key
             document.addEventListener('keydown', function(e) {
