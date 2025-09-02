@@ -718,12 +718,6 @@
             text-align: center;
             margin-bottom: 50px;
             position: relative;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .section-header:hover {
-            transform: scale(1.02);
         }
 
         .section-title {
@@ -736,23 +730,6 @@
             background-clip: text;
             position: relative;
             display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .section-header:hover .section-title::after {
-            width: 100%;
         }
 
         .section-subtitle {
@@ -761,14 +738,9 @@
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
-            transition: all 0.3s ease;
         }
 
-        .section-header:hover .section-subtitle {
-            color: var(--text-primary);
-        }
-
-        /* Interactive section counter */
+        /* Section counter */
         .section-counter {
             position: absolute;
             top: -10px;
@@ -783,14 +755,6 @@
             justify-content: center;
             font-size: 0.8rem;
             font-weight: 700;
-            opacity: 0;
-            transform: scale(0);
-            transition: all 0.3s ease;
-        }
-
-        .section-header:hover .section-counter {
-            opacity: 1;
-            transform: scale(1);
         }
 
         /* About Section - Modern Enhanced */
@@ -799,7 +763,6 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-top: 40px;
-            perspective: 1000px;
         }
 
         .about-card {
@@ -809,65 +772,19 @@
             border-radius: 25px;
             padding: 40px 30px;
             text-align: center;
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
-            transform-style: preserve-3d;
             cursor: pointer;
         }
 
-        .about-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-            transition: left 0.8s ease;
-            z-index: 1;
-        }
 
-        .about-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, 
-                rgba(99, 102, 241, 0.1) 0%, 
-                rgba(139, 92, 246, 0.05) 50%, 
-                rgba(236, 72, 153, 0.1) 100%);
-            opacity: 0;
-            transition: opacity 0.6s ease;
-            border-radius: 25px;
-        }
 
-        .about-card:hover::before {
-            left: 100%;
-        }
 
-        .about-card:hover::after {
-            opacity: 1;
-        }
-
-        .about-card:hover {
-            transform: translateY(-15px) rotateX(5deg) rotateY(5deg) scale(1.05);
-            box-shadow: 
-                0 25px 50px rgba(0, 0, 0, 0.3),
-                0 0 30px rgba(99, 102, 241, 0.3),
-                0 0 60px rgba(139, 92, 246, 0.2);
-            border-color: var(--accent-primary);
-        }
 
         .about-card.visible {
-            animation: cardFloat 0.8s ease-out forwards;
+            opacity: 1;
+            transform: none;
         }
-
-        .about-card:nth-child(1) { animation-delay: 0.1s; }
-        .about-card:nth-child(2) { animation-delay: 0.3s; }
-        .about-card:nth-child(3) { animation-delay: 0.5s; }
 
         .about-icon-wrapper {
             position: relative;
@@ -880,25 +797,13 @@
             border-radius: 50%;
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-            transition: all 0.5s ease;
             z-index: 2;
-        }
-
-        .about-card:hover .about-icon-wrapper {
-            transform: scale(1.2) rotate(360deg);
-            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
         }
 
         .about-icon {
             font-size: 2.5rem;
             color: white;
-            transition: all 0.5s ease;
             z-index: 3;
-        }
-
-        .about-card:hover .about-icon {
-            transform: scale(1.1);
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
         }
 
         .about-card h3 {
@@ -906,92 +811,21 @@
             font-weight: 700;
             margin-bottom: 20px;
             color: var(--text-primary);
-            transition: all 0.4s ease;
             z-index: 2;
             position: relative;
-        }
-
-        .about-card:hover h3 {
-            transform: translateY(-5px);
-            background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .about-card p {
             color: var(--text-secondary);
             line-height: 1.8;
             font-size: 1rem;
-            transition: all 0.4s ease;
             z-index: 2;
             position: relative;
         }
 
-        .about-card:hover p {
-            color: var(--text-primary);
-            transform: translateY(-3px);
-        }
 
-        .about-card .floating-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
 
-        .about-card .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--accent-primary);
-            border-radius: 50%;
-            opacity: 0;
-            animation: particleFloat 3s ease-in-out infinite;
-        }
 
-        .about-card:hover .particle {
-            opacity: 0.6;
-        }
-
-        .about-card .particle:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
-        .about-card .particle:nth-child(2) { top: 30%; right: 25%; animation-delay: 1s; }
-        .about-card .particle:nth-child(3) { bottom: 40%; left: 30%; animation-delay: 2s; }
-        .about-card .particle:nth-child(4) { bottom: 30%; right: 20%; animation-delay: 0.5s; }
-
-        @keyframes cardFloat {
-            0% {
-                opacity: 0;
-                transform: translateY(50px) scale(0.8);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        @keyframes particleFloat {
-            0%, 100% {
-                transform: translateY(0px) scale(1);
-                opacity: 0.6;
-            }
-            50% {
-                transform: translateY(-20px) scale(1.5);
-                opacity: 1;
-            }
-        }
-
-        @keyframes borderGlow {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
-            }
-        }
 
         /* Achievements Section - Dynamic Enhanced */
         .achievements-grid {
@@ -1009,11 +843,9 @@
             border-radius: 30px;
             padding: 35px 25px;
             text-align: center;
-            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            transform-style: preserve-3d;
         }
 
         .achievement-card::before {
@@ -1048,31 +880,12 @@
             pointer-events: none;
         }
 
-        .achievement-card:hover::after {
-            opacity: 1;
-        }
 
-        .achievement-card:hover {
-            transform: translateY(-20px) scale(1.08) rotateX(10deg);
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.4),
-                0 0 40px rgba(99, 102, 241, 0.3),
-                0 0 80px rgba(139, 92, 246, 0.2);
-            border-color: var(--accent-primary);
-        }
 
         .achievement-card.visible {
-            animation: achievementSlideIn 1s ease-out forwards;
+            opacity: 1;
+            transform: none;
         }
-
-        .achievement-card:nth-child(1) { animation-delay: 0.1s; }
-        .achievement-card:nth-child(2) { animation-delay: 0.2s; }
-        .achievement-card:nth-child(3) { animation-delay: 0.3s; }
-        .achievement-card:nth-child(4) { animation-delay: 0.4s; }
-        .achievement-card:nth-child(5) { animation-delay: 0.5s; }
-        .achievement-card:nth-child(6) { animation-delay: 0.6s; }
-        .achievement-card:nth-child(7) { animation-delay: 0.7s; }
-        .achievement-card:nth-child(8) { animation-delay: 0.8s; }
 
         .achievement-icon-container {
             position: relative;
@@ -1085,25 +898,13 @@
             border-radius: 50%;
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
-            transition: all 0.6s ease;
             z-index: 2;
-        }
-
-        .achievement-card:hover .achievement-icon-container {
-            transform: scale(1.3) rotateY(180deg);
-            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.6);
         }
 
         .achievement-icon {
             font-size: 2.8rem;
             color: white;
-            transition: all 0.6s ease;
             z-index: 3;
-        }
-
-        .achievement-card:hover .achievement-icon {
-            transform: rotateY(-180deg) scale(1.2);
-            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
         }
 
         .achievement-card h3 {
@@ -1111,32 +912,16 @@
             font-weight: 700;
             margin-bottom: 15px;
             color: var(--text-primary);
-            transition: all 0.5s ease;
             z-index: 2;
             position: relative;
-        }
-
-        .achievement-card:hover h3 {
-            transform: translateY(-8px);
-            background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
         }
 
         .achievement-card p {
             color: var(--text-secondary);
             line-height: 1.7;
             font-size: 0.95rem;
-            transition: all 0.5s ease;
             z-index: 2;
             position: relative;
-        }
-
-        .achievement-card:hover p {
-            color: var(--text-primary);
-            transform: translateY(-5px);
         }
 
         .achievement-card .achievement-badge {
@@ -1153,20 +938,13 @@
             color: white;
             font-size: 0.8rem;
             font-weight: 700;
-            opacity: 0;
-            transform: scale(0) rotate(180deg);
-            transition: all 0.6s ease;
-            z-index: 4;
-        }
-
-        .achievement-card:hover .achievement-badge {
             opacity: 1;
-            transform: scale(1) rotate(0deg);
+            transform: scale(1);
+            z-index: 4;
         }
 
         .achievement-card .achievement-badge::before {
             content: '★';
-            animation: badgePulse 2s ease-in-out infinite;
         }
 
         .achievement-card .achievement-stats {
@@ -1175,15 +953,9 @@
             left: 15px;
             display: flex;
             gap: 8px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-            z-index: 2;
-        }
-
-        .achievement-card:hover .achievement-stats {
             opacity: 1;
             transform: translateY(0);
+            z-index: 2;
         }
 
         .achievement-stat {
@@ -1191,22 +963,11 @@
             height: 8px;
             background: var(--accent-primary);
             border-radius: 50%;
-            animation: statPulse 1.5s ease-in-out infinite;
         }
 
-        .achievement-stat:nth-child(2) { animation-delay: 0.3s; }
-        .achievement-stat:nth-child(3) { animation-delay: 0.6s; }
 
-        @keyframes achievementSlideIn {
-            0% {
-                opacity: 0;
-                transform: translateX(-100px) scale(0.8);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0) scale(1);
-            }
-        }
+
+
 
         @keyframes achievementBorderFlow {
             0%, 100% {
@@ -1217,27 +978,9 @@
             }
         }
 
-        @keyframes badgePulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 0.8;
-            }
-        }
 
-        @keyframes statPulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.6;
-            }
-            50% {
-                transform: scale(1.5);
-                opacity: 1;
-            }
-        }
+
+
 
 
 
@@ -2397,6 +2140,72 @@
                 padding: 12px 20px;
                 font-size: 0.9rem;
             }
+
+                                /* Mobile-optimized achievement cards */
+        .achievements-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 0 15px;
+        }
+
+        .achievement-card {
+            padding: 25px 20px;
+        }
+
+        .achievement-card::before {
+            height: 3px;
+        }
+
+        .achievement-card::after {
+            display: none;
+        }
+
+        /* Remove all hover animations - just basic appearance */
+        .achievement-card:hover .achievement-icon-container,
+        .achievement-card:hover .achievement-icon,
+        .achievement-card:hover h3,
+        .achievement-card:hover p {
+            transform: none;
+        }
+
+            .achievement-icon-container {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 15px;
+            }
+
+            .achievement-icon {
+                font-size: 2.2rem;
+            }
+
+            .achievement-card h3 {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+
+            .achievement-card p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            .achievement-card .achievement-badge {
+                width: 25px;
+                height: 25px;
+                top: 10px;
+                right: 10px;
+                font-size: 0.7rem;
+            }
+
+            .achievement-card .achievement-stats {
+                bottom: 10px;
+                left: 10px;
+                gap: 6px;
+            }
+
+            .achievement-stat {
+                width: 6px;
+                height: 6px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -2434,6 +2243,33 @@
 
             .project-badge {
                 align-self: flex-start;
+            }
+
+            /* Extra small screen achievement optimizations */
+            .achievements-grid {
+                gap: 15px;
+                padding: 0 10px;
+            }
+
+            .achievement-card {
+                padding: 20px 15px;
+            }
+
+            .achievement-icon-container {
+                width: 60px;
+                height: 60px;
+            }
+
+            .achievement-icon {
+                font-size: 1.8rem;
+            }
+
+            .achievement-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .achievement-card p {
+                font-size: 0.85rem;
             }
         }
 
@@ -2697,7 +2533,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
             position: relative;
             z-index: 1001;
         }
@@ -2756,129 +2592,135 @@
             font-size: 1rem;
         }
 
-        /* Modal Styles */
-        .modal-overlay {
+        /* Contact Sub-menu */
+        .contact-submenu {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 25px;
             z-index: 2000;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
+            min-width: 300px;
         }
 
-        .modal-overlay.active {
+        .contact-submenu.active {
             opacity: 1;
             visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
         }
 
-        .modal-content {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 25px;
-            padding: 0;
-            max-width: 900px;
-            width: 95%;
-            max-height: 90vh;
-            overflow: hidden;
-            transform: scale(0.8);
-            transition: all 0.3s ease;
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
-
-        /* Responsive modal adjustments */
-        @media (max-width: 768px) {
-            .modal-content {
-                max-width: 95%;
-                width: 95%;
-                max-height: 95vh;
-                margin: 10px;
-            }
-            
-            .modal-body {
-                max-height: calc(95vh - 100px);
-                padding: 20px;
-            }
-            
-            .modal-header {
-                padding: 20px;
-            }
-            
-            .modal-header h3 {
-                font-size: 1.3rem;
-            }
-        }
-
-        .modal-header {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            color: white;
-            padding: 25px 30px;
+        .contact-submenu-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .modal-header h3 {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: 700;
+        .contact-submenu-header span {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
         }
 
-        .modal-close {
+        .close-submenu {
             background: none;
             border: none;
-            color: white;
-            font-size: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
             cursor: pointer;
             padding: 5px;
             border-radius: 50%;
             transition: all 0.3s ease;
         }
 
-        .modal-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
-        }
-
-        .modal-body {
-            padding: 30px;
+        .close-submenu:hover {
             color: var(--text-primary);
-            line-height: 1.6;
-            max-height: calc(90vh - 120px);
-            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        /* Interactive animations */
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .bounce {
-            animation: bounce 1s ease-in-out;
+        .contact-option {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .contact-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
         }
 
-        .pulse {
-            animation: pulse 2s infinite;
+        .contact-option i {
+            font-size: 1.2rem;
+            color: var(--accent-primary);
+            width: 20px;
+            text-align: center;
         }
+
+        .contact-option span {
+            flex: 1;
+        }
+
+        /* Mobile responsive FAB */
+        @media (max-width: 768px) {
+            .fab-options {
+                right: -10px;
+                gap: 12px;
+            }
+            
+            .fab-option {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+            
+            .fab-option span {
+                display: none;
+            }
+            
+            .fab-option i {
+                font-size: 1.1rem;
+            }
+
+            /* Mobile responsive contact sub-menu */
+            .contact-submenu {
+                min-width: 280px;
+                padding: 20px;
+                margin: 20px;
+            }
+
+            .contact-option {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+
+
+
 
         /* Interactive Demo Styles */
         .interactive-demo {
@@ -5791,42 +5633,61 @@
     <!-- Floating Action Button -->
     <div class="fab-container">
         <div class="fab-button" id="fabMain">
-            <i class="fas fa-magic"></i>
+            <i class="fas fa-arrow-up"></i>
         </div>
         <div class="fab-options">
             <div class="fab-option" data-action="scroll-top">
                 <i class="fas fa-arrow-up"></i>
                 <span>Top</span>
             </div>
+            <div class="fab-option" data-action="download-cv">
+                <i class="fas fa-download"></i>
+                <span>Download CV</span>
+            </div>
+                            <div class="fab-option" data-action="contact-menu">
+                    <i class="fas fa-address-book"></i>
+                    <span>Contact Info</span>
+                </div>
             <div class="fab-option" data-action="toggle-theme">
-                <i class="fas fa-moon"></i>
+                <i class="fas fa-palette"></i>
                 <span>Theme</span>
             </div>
-            <div class="fab-option" data-action="share">
-                <i class="fas fa-share-alt"></i>
-                <span>Share</span>
+        </div>
+        
+        <!-- Contact Info Sub-menu -->
+        <div class="contact-submenu">
+            <div class="contact-submenu-header">
+                <span>Choose what to copy:</span>
+                <button class="close-submenu" id="closeContactMenu">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            <div class="fab-option" data-action="contact">
-                <i class="fas fa-envelope"></i>
-                <span>Contact</span>
+            <div class="contact-options">
+                <div class="contact-option" data-action="copy-email">
+                    <i class="fas fa-envelope"></i>
+                    <span>Copy Email</span>
+                </div>
+                <div class="contact-option" data-action="copy-phone">
+                    <i class="fas fa-phone"></i>
+                    <span>Copy Phone</span>
+                </div>
+                <div class="contact-option" data-action="copy-github">
+                    <i class="fab fa-github"></i>
+                    <span>Copy GitHub</span>
+                </div>
+                <div class="contact-option" data-action="copy-linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    <span>Copy LinkedIn</span>
+                </div>
+                <div class="contact-option" data-action="copy-all">
+                    <i class="fas fa-copy"></i>
+                    <span>Copy All Contact</span>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Interactive Modal -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modalTitle">Interactive Feature</h3>
-                <button class="modal-close" id="modalClose">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body" id="modalBody">
-                <p>This is an interactive feature. Click on any card to see more details!</p>
-            </div>
-        </div>
-    </div>
+
 
     <footer>
         <div class="footer-content">
@@ -6125,6 +5986,56 @@
                         case 'scroll-top':
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                             break;
+                        case 'download-cv':
+                            // Show loading state
+                            const originalText = this.querySelector('span').textContent;
+                            this.querySelector('span').textContent = 'Downloading...';
+                            
+                            // Download actual resume file
+                            const link = document.createElement('a');
+                            // Your actual resume file path
+                            link.href = './Nithiyanandham_Data&AI_Engineer.pdf';
+                            link.download = 'Nithiyanandham_Data&AI_Engineer.pdf';
+                            link.target = '_blank';
+                            
+                            // Check if file exists, if not show fallback
+                            fetch(link.href, { method: 'HEAD' })
+                                .then(response => {
+                                    if (response.ok) {
+                                        link.click();
+                                        this.querySelector('span').textContent = 'Downloaded! ✓';
+                                        setTimeout(() => {
+                                            this.querySelector('span').textContent = originalText;
+                                        }, 3000);
+                                    } else {
+                                        // Fallback to text version if file not found
+                                        const fallbackLink = document.createElement('a');
+                                        fallbackLink.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent('Nithiyanandham R - Data & AI Engineer\n\nContact: nithiyanandham1509@gmail.com\nPhone: +91 9629618273\nLinkedIn: linkedin.com/in/nithiyanandham-r-23094092\n\nSkills: Python, AI/ML, Data Engineering, Cloud Computing\nExperience: 5+ years in Data & AI\n\nDownload full CV from portfolio for complete details.');
+                                        fallbackLink.download = 'Nithiyanandham_R_CV.txt';
+                                        fallbackLink.click();
+                                        this.querySelector('span').textContent = 'Text CV Downloaded ✓';
+                                        setTimeout(() => {
+                                            this.querySelector('span').textContent = originalText;
+                                        }, 3000);
+                                    }
+                                })
+                                .catch(() => {
+                                    // Fallback to text version if fetch fails
+                                    const fallbackLink = document.createElement('a');
+                                    fallbackLink.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent('Nithiyanandham R - Data & AI Engineer\n\nContact: nithiyanandham1509@gmail.com\nPhone: +91 9629618273\nLinkedIn: linkedin.com/in/nithiyanandham-r-23094092\n\nSkills: Python, AI/ML, Data Engineering, Cloud Computing\nExperience: 5+ years in Data & AI\n\nDownload full CV from portfolio for complete details.');
+                                    fallbackLink.download = 'Nithiyanandham_R_CV.txt';
+                                    fallbackLink.click();
+                                    this.querySelector('span').textContent = 'Text CV Downloaded ✓';
+                                    setTimeout(() => {
+                                        this.querySelector('span').textContent = originalText;
+                                    }, 3000);
+                                });
+                            break;
+                        case 'contact-menu':
+                            // Show contact sub-menu
+                            const contactSubmenu = document.querySelector('.contact-submenu');
+                            contactSubmenu.classList.add('active');
+                            break;
                         case 'toggle-theme':
                             const themes = ['', 'neon-theme', 'sunset-theme', 'ocean-theme', 'forest-theme', 'purple-dream-theme'];
                             const currentTheme = themes.find(theme => document.body.classList.contains(theme)) || '';
@@ -6141,30 +6052,13 @@
                                 document.body.classList.add(themes[nextIndex]);
                             }
                             
-                            showModal('Theme Changed', 
-                                '<p>🎨 <strong>Theme Updated!</strong></p>' +
-                                '<p>Current theme: ' + (themes[nextIndex] ? themes[nextIndex].replace('-theme', '').replace(/([A-Z])/g, ' $1').trim() : 'Default') + '</p>' +
-                                '<p>Click the magic button again to try more themes!</p>'
-                            );
-                            break;
-                        case 'share':
-                            if (navigator.share) {
-                                navigator.share({
-                                    title: 'Nithiyanandham R - Data & AI Engineer',
-                                    url: window.location.href
-                                });
-                            } else {
-                                showModal('Share Portfolio', 'Copy this link to share: ' + window.location.href);
-                            }
-                            break;
-                        case 'contact':
-                            showModal('Contact Information', 
-                                '<div style="text-align: center;">' +
-                                '<p><strong>Email:</strong> nithiyanandham1509@gmail.com</p>' +
-                                '<p><strong>Phone:</strong> +91 9629618273</p>' +
-                                '<p><strong>LinkedIn:</strong> linkedin.com/in/nithiyanandham-r-23094092</p>' +
-                                '</div>'
-                            );
+                            // Show feedback
+                            const themeText = themes[nextIndex] ? themes[nextIndex].replace('-theme', '').replace(/([A-Z])/g, ' $1').trim() : 'Default';
+                            const originalThemeText = this.querySelector('span').textContent;
+                            this.querySelector('span').textContent = themeText + ' ✓';
+                            setTimeout(() => {
+                                this.querySelector('span').textContent = originalThemeText;
+                            }, 3000);
                             break;
                     }
                     
@@ -6173,17 +6067,107 @@
                 });
             });
 
-            // Modal functionality
-            const modalOverlay = document.getElementById('modalOverlay');
-            const modalClose = document.getElementById('modalClose');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalBody = document.getElementById('modalBody');
+            // Close FAB options when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!fabContainer.contains(e.target)) {
+                    fabContainer.classList.remove('active');
+                    fabMain.classList.remove('active');
+                }
+            });
 
-            function showModal(title, content) {
-                modalTitle.textContent = title;
-                modalBody.innerHTML = content;
-                modalOverlay.classList.add('active');
-            }
+            // Contact sub-menu functionality
+            const contactSubmenu = document.querySelector('.contact-submenu');
+            const closeContactMenu = document.getElementById('closeContactMenu');
+            const contactOptions = document.querySelectorAll('.contact-option');
+
+            // Close contact sub-menu
+            closeContactMenu.addEventListener('click', function() {
+                contactSubmenu.classList.remove('active');
+            });
+
+            // Handle contact option clicks
+            contactOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const action = this.getAttribute('data-action');
+                    
+                    switch(action) {
+                        case 'copy-email':
+                            navigator.clipboard.writeText('nithiyanandham1509@gmail.com').then(() => {
+                                const originalText = this.querySelector('span').textContent;
+                                this.querySelector('span').textContent = 'Email Copied! ✓';
+                                setTimeout(() => {
+                                    this.querySelector('span').textContent = originalText;
+                                }, 2000);
+                            });
+                            break;
+                        case 'copy-phone':
+                            navigator.clipboard.writeText('+91 9629618273').then(() => {
+                                const originalText = this.querySelector('span').textContent;
+                                this.querySelector('span').textContent = 'Phone Copied! ✓';
+                                setTimeout(() => {
+                                    this.querySelector('span').textContent = originalText;
+                                }, 2000);
+                            });
+                            break;
+                        case 'copy-github':
+                            navigator.clipboard.writeText('https://github.com/nithiyananandham12').then(() => {
+                                const originalText = this.querySelector('span').textContent;
+                                this.querySelector('span').textContent = 'GitHub Copied! ✓';
+                                setTimeout(() => {
+                                    this.querySelector('span').textContent = originalText;
+                                }, 2000);
+                            });
+                            break;
+                        case 'copy-linkedin':
+                            navigator.clipboard.writeText('https://www.linkedin.com/in/nithiyanandham-r-23094092').then(() => {
+                                const originalText = this.querySelector('span').textContent;
+                                this.querySelector('span').textContent = 'LinkedIn Copied! ✓';
+                                setTimeout(() => {
+                                    this.querySelector('span').textContent = originalText;
+                                }, 2000);
+                            });
+                            break;
+                        case 'copy-all':
+                            const allContactInfo = `Email: nithiyanandham1509@gmail.com
+Phone: +91 9629618273
+GitHub: https://github.com/nithiyananandham12
+LinkedIn: https://www.linkedin.com/in/nithiyanandham-r-23094092`;
+                            
+                            navigator.clipboard.writeText(allContactInfo).then(() => {
+                                const originalText = this.querySelector('span').textContent;
+                                this.querySelector('span').textContent = 'All Contact Copied! ✓';
+                                setTimeout(() => {
+                                    this.querySelector('span').textContent = originalText;
+                                }, 3000);
+                            });
+                            break;
+                    }
+                    
+                    // Close sub-menu after copying
+                    setTimeout(() => {
+                        contactSubmenu.classList.remove('active');
+                    }, 1000);
+                });
+            });
+
+            // Close contact sub-menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!contactSubmenu.contains(e.target) && !e.target.closest('[data-action="contact-menu"]')) {
+                    contactSubmenu.classList.remove('active');
+                }
+            });
+
+            // Close FAB options on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    fabContainer.classList.remove('active');
+                    fabMain.classList.remove('active');
+                }
+            });
+
+
+
+
 
             function showInteractiveDemo(projectTitle, demoType) {
                 let demoContent = '';
@@ -6795,43 +6779,9 @@
             }
             }
 
-            modalClose.addEventListener('click', function() {
-                modalOverlay.classList.remove('active');
-            });
 
-            modalOverlay.addEventListener('click', function(e) {
-                if (e.target === modalOverlay) {
-                    modalOverlay.classList.remove('active');
-                }
-            });
 
-            // Card click interactions
-            const interactiveCards = document.querySelectorAll('.card, .project-card, .skill-category, .timeline-item, .cert-item, .contact-item, .about-card, .achievement-card, .summary-card');
-            
-            interactiveCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    // Remove expanded class from all cards
-                    interactiveCards.forEach(c => c.classList.remove('expanded'));
-                    
-                    // Add expanded class to clicked card
-                    this.classList.add('expanded');
-                    
-                    // Get card content for modal
-                    const cardTitle = this.querySelector('h3')?.textContent || 'Card Details';
-                    const cardContent = this.innerHTML;
-                    
-                    // Show modal with card details
-                    showModal(cardTitle, 
-                        '<div style="max-height: 400px; overflow-y: auto;">' + 
-                        cardContent + 
-                        '</div>'
-                    );
-                    
-                    // Add bounce animation
-                    this.classList.add('bounce');
-                    setTimeout(() => this.classList.remove('bounce'), 1000);
-                });
-            });
+
 
             // Section header interactions
             const sectionHeaders = document.querySelectorAll('.section-header');
@@ -6843,31 +6793,11 @@
                 counter.className = 'section-counter';
                 counter.textContent = sectionCounter++;
                 header.appendChild(counter);
-                
-                // Add click interaction
-                header.addEventListener('click', function() {
-                    const section = this.closest('section');
-                    const sectionId = section.id;
-                    
-                    showModal('Section: ' + sectionId, 
-                        '<p>This is the <strong>' + sectionId + '</strong> section.</p>' +
-                        '<p>Click on any card within this section to see detailed information!</p>'
-                    );
-                    
-                    // Add pulse animation
-                    this.classList.add('pulse');
-                    setTimeout(() => this.classList.remove('pulse'), 2000);
-                });
             });
 
             // Keyboard shortcuts
             document.addEventListener('keydown', function(e) {
                 switch(e.key) {
-                    case 'Escape':
-                        modalOverlay.classList.remove('active');
-                        fabContainer.classList.remove('active');
-                        fabMain.classList.remove('active');
-                        break;
                     case 'h':
                     case 'H':
                         if (e.ctrlKey) {
@@ -6878,14 +6808,7 @@
                 }
             });
 
-            // Scroll to top button visibility
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 500) {
-                    fabMain.style.opacity = '1';
-                } else {
-                    fabMain.style.opacity = '0.7';
-                }
-            });
+
 
             // Add loading animation
             window.addEventListener('load', function() {
