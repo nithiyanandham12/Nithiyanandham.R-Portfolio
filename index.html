@@ -635,19 +635,6 @@
             margin: 0 auto;
             padding: 0 30px;
         }
-        
-        /* Mobile responsive container */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-        }
 
         /* Enhanced Sections */
         section {
@@ -657,21 +644,6 @@
             transform: translateY(50px);
             transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
-        }
-        
-        /* Mobile responsive sections */
-        @media (max-width: 768px) {
-            section {
-                margin-bottom: 60px;
-                padding: 30px 0;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            section {
-                margin-bottom: 40px;
-                padding: 20px 0;
-            }
         }
 
         section.visible {
@@ -811,41 +783,6 @@
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
-        }
-        
-        /* Mobile responsive section headers */
-        @media (max-width: 768px) {
-            .section-header {
-                margin-bottom: 40px;
-                padding: 0 15px;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-                margin-bottom: 15px;
-            }
-            
-            .section-subtitle {
-                font-size: 1rem;
-                line-height: 1.5;
-                max-width: 100%;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .section-header {
-                margin-bottom: 30px;
-                padding: 0 10px;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 12px;
-            }
-            
-            .section-subtitle {
-                font-size: 0.9rem;
-            }
         }
 
         /* Section counter */
@@ -1877,39 +1814,6 @@
             border-color: transparent;
             box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
         }
-        
-        /* Mobile responsive project filters */
-        @media (max-width: 768px) {
-            .project-filters {
-                flex-wrap: wrap;
-                gap: 12px;
-                justify-content: center;
-                padding: 0 15px;
-            }
-            
-            .filter-btn {
-                padding: 10px 16px;
-                font-size: 0.85rem;
-                border-radius: 12px;
-                min-width: auto;
-                flex: 1;
-                min-width: 120px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .project-filters {
-                gap: 8px;
-                padding: 0 10px;
-            }
-            
-            .filter-btn {
-                padding: 8px 12px;
-                font-size: 0.8rem;
-                min-width: 100px;
-                flex: 1;
-            }
-        }
 
         .projects-showcase {
             display: grid;
@@ -1985,44 +1889,11 @@
         .project-item:hover .project-overlay {
             opacity: 1;
         }
-        
-        /* Mobile touch optimization */
-        @media (hover: none) and (pointer: coarse) {
-            .project-item:active .project-overlay {
-                opacity: 1;
-            }
-            
-            .project-item:active .project-image {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            
-            .project-item:active {
-                transform: translateY(-5px) scale(1.01);
-            }
-        }
 
         .project-stats {
             display: flex;
             gap: 30px;
             text-align: center;
-        }
-        
-        /* Mobile responsive project stats */
-        @media (max-width: 768px) {
-            .project-stats {
-                gap: 20px;
-            }
-            
-            .stat {
-                flex: 1;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .project-stats {
-                gap: 15px;
-            }
         }
 
         .stat {
@@ -2056,34 +1927,6 @@
             margin-bottom: 12px;
             gap: 10px;
         }
-        
-        /* Mobile responsive project header */
-        @media (max-width: 768px) {
-            .project-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-                margin-bottom: 15px;
-            }
-            
-            .project-badge {
-                align-self: flex-start;
-                font-size: 0.6rem;
-                padding: 3px 8px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .project-header {
-                gap: 6px;
-                margin-bottom: 12px;
-            }
-            
-            .project-badge {
-                font-size: 0.55rem;
-                padding: 2px 6px;
-            }
-        }
 
         .project-title {
             font-size: 1.1rem;
@@ -2105,9 +1948,8 @@
             font-size: 0.65rem;
             font-weight: 700;
             text-transform: uppercase;
-            white-space: nowrap;
-            flex-shrink: 0;
             letter-spacing: 0.5px;
+            flex-shrink: 0;
             white-space: nowrap;
         }
 
@@ -2140,7 +1982,6 @@
             font-weight: 600;
             border: 1px solid rgba(99, 102, 241, 0.3);
             transition: all 0.3s ease;
-            white-space: nowrap;
         }
 
         .tech-tag:hover {
@@ -2190,23 +2031,6 @@
         .action-btn.secondary:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
-        }
-        
-        /* Mobile responsive action buttons */
-        @media (max-width: 768px) {
-            .action-btn {
-                padding: 12px 20px;
-                font-size: 0.9rem;
-                border-radius: 15px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .action-btn {
-                padding: 10px 16px;
-                font-size: 0.85rem;
-                border-radius: 12px;
-            }
         }
 
         @keyframes iconFloat {
@@ -3603,20 +3427,6 @@
             align-items: center;
             justify-content: center;
         }
-        
-        /* Mobile responsive modal overlay */
-        @media (max-width: 768px) {
-            .modal-overlay {
-                align-items: flex-start;
-                padding: 10px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .modal-overlay {
-                padding: 5px;
-            }
-        }
 
         .modal-overlay.active {
             opacity: 1;
@@ -3634,57 +3444,6 @@
             transform: scale(0.8);
             transition: all 0.3s ease;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Mobile responsive modal */
-        @media (max-width: 768px) {
-            .modal-container {
-                width: 95vw;
-                max-height: 95vh;
-                border-radius: 15px;
-                margin: 10px;
-            }
-            
-            .modal-header {
-                padding: 20px;
-            }
-            
-            .modal-title {
-                font-size: 1.3rem;
-            }
-            
-            .modal-body {
-                padding: 20px;
-                max-height: 75vh;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .modal-container {
-                width: 98vw;
-                max-height: 98vh;
-                border-radius: 12px;
-                margin: 5px;
-            }
-            
-            .modal-header {
-                padding: 15px;
-            }
-            
-            .modal-title {
-                font-size: 1.2rem;
-            }
-            
-            .modal-body {
-                padding: 15px;
-                max-height: 80vh;
-            }
-            
-            .modal-close {
-                width: 35px;
-                height: 35px;
-                font-size: 1.3rem;
-            }
         }
 
         .modal-overlay.active .modal-container {
@@ -3737,137 +3496,27 @@
 
         /* Mobile responsive projects */
         @media (max-width: 768px) {
-            .projects-showcase {
-                grid-template-columns: 1fr;
-                gap: 25px;
-                padding: 0 15px;
-                margin-top: 30px;
-            }
-            
             .project-item {
-                min-height: auto;
-                height: auto;
-                max-height: none;
-                border-radius: 20px;
-            }
-            
-            .project-preview {
-                height: 140px;
-            }
-            
-            .project-image {
-                font-size: 3rem;
-            }
-            
-            .project-title {
-                font-size: 1.1rem;
-                min-height: auto;
-                line-height: 1.4;
-                margin-bottom: 8px;
-            }
-            
-            .project-description {
-                font-size: 0.85rem;
-                min-height: auto;
-                line-height: 1.5;
-                margin-bottom: 15px;
-            }
-            
-            .project-tech {
-                min-height: auto;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                margin-bottom: 15px;
-            }
-            
-            .tech-tag {
-                font-size: 0.7rem;
-                padding: 6px 10px;
-                border-radius: 8px;
-            }
-            
-            .project-actions {
-                min-height: auto;
-                margin-top: auto;
-            }
-            
-            .action-btn {
-                width: 100%;
-                padding: 12px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .project-stats {
-                gap: 20px;
-            }
-            
-            .stat-number {
-                font-size: 1.3rem;
-            }
-            
-            .stat-label {
-                font-size: 0.75rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .projects-showcase {
-                padding: 0 10px;
-                gap: 20px;
-            }
-            
-            .project-item {
-                border-radius: 15px;
-            }
-            
-            .project-preview {
-                height: 120px;
-            }
-            
-            .project-image {
-                font-size: 2.5rem;
-            }
-            
-            .project-content {
-                padding: 20px;
+                min-height: 450px;
             }
             
             .project-title {
                 font-size: 1rem;
-                margin-bottom: 6px;
+                min-height: 40px;
             }
             
             .project-description {
-                font-size: 0.8rem;
-                margin-bottom: 12px;
+                font-size: 0.75rem;
+                min-height: 50px;
+                line-height: 1.3;
             }
             
             .project-tech {
-                gap: 6px;
-                margin-bottom: 12px;
+                min-height: 30px;
             }
             
-            .tech-tag {
-                font-size: 0.65rem;
-                padding: 5px 8px;
-            }
-            
-            .action-btn {
-                padding: 10px 16px;
-                font-size: 0.85rem;
-            }
-            
-            .project-stats {
-                gap: 15px;
-            }
-            
-            .stat-number {
-                font-size: 1.2rem;
-            }
-            
-            .stat-label {
-                font-size: 0.7rem;
+            .project-actions {
+                min-height: 45px;
             }
         }
 
@@ -4736,86 +4385,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
-        
-        /* Mobile responsive demo container */
-        @media (max-width: 768px) {
-            .demo-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .live-demo-section {
-                padding: 15px;
-                margin-bottom: 15px;
-            }
-            
-            .live-demo-section h4 {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
-            }
-            
-            .customer-side h5,
-            .ai-processing h5 {
-                font-size: 0.95rem;
-                margin-bottom: 12px;
-            }
-            
-            .call-status {
-                margin-bottom: 15px;
-            }
-            
-            .customer-query {
-                padding: 12px;
-            }
-            
-            .processing-steps {
-                gap: 10px;
-            }
-            
-            .processing-step {
-                padding: 10px;
-                gap: 10px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .demo-container {
-                gap: 15px;
-            }
-            
-            .live-demo-section {
-                padding: 12px;
-                margin-bottom: 12px;
-            }
-            
-            .live-demo-section h4 {
-                font-size: 1rem;
-                margin-bottom: 12px;
-            }
-            
-            .customer-side h5,
-            .ai-processing h5 {
-                font-size: 0.9rem;
-                margin-bottom: 10px;
-            }
-            
-            .call-status {
-                margin-bottom: 12px;
-            }
-            
-            .customer-query {
-                padding: 10px;
-            }
-            
-            .processing-steps {
-                gap: 8px;
-            }
-            
-            .processing-step {
-                padding: 8px;
-                gap: 8px;
-            }
-        }
 
         .customer-side h5,
         .ai-processing h5 {
@@ -4885,47 +4454,6 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
-        
-        /* Mobile responsive processing steps */
-        @media (max-width: 768px) {
-            .processing-step {
-                flex-direction: column;
-                align-items: flex-start;
-                text-align: left;
-                gap: 8px;
-            }
-            
-            .step-icon {
-                font-size: 1.2rem;
-            }
-            
-            .step-title {
-                font-size: 0.9rem;
-            }
-            
-            .step-status {
-                font-size: 0.8rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .processing-step {
-                padding: 8px;
-                gap: 6px;
-            }
-            
-            .step-icon {
-                font-size: 1.1rem;
-            }
-            
-            .step-title {
-                font-size: 0.85rem;
-            }
-            
-            .step-status {
-                font-size: 0.75rem;
-            }
-        }
 
         .processing-step.active {
             border-left: 4px solid var(--accent-primary);
@@ -4978,76 +4506,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-        }
-        
-        /* Mobile responsive CRM integration */
-        @media (max-width: 768px) {
-            .crm-integration {
-                padding: 15px;
-                margin-bottom: 15px;
-            }
-            
-            .crm-integration h4 {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
-            }
-            
-            .crm-dashboard {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .crm-section {
-                padding: 12px;
-            }
-            
-            .crm-section h6 {
-                font-size: 0.85rem;
-                margin-bottom: 12px;
-            }
-            
-            .info-row {
-                padding: 6px 0;
-            }
-            
-            .info-row .label,
-            .info-row .value {
-                font-size: 0.75rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .crm-integration {
-                padding: 12px;
-                margin-bottom: 12px;
-            }
-            
-            .crm-integration h4 {
-                font-size: 1rem;
-                margin-bottom: 12px;
-            }
-            
-            .crm-dashboard {
-                gap: 12px;
-            }
-            
-            .crm-section {
-                padding: 10px;
-            }
-            
-            .crm-section h6 {
-                font-size: 0.8rem;
-                margin-bottom: 10px;
-            }
-            
-            .info-row {
-                padding: 5px 0;
-            }
-            
-            .info-row .label,
-            .info-row .value {
-                font-size: 0.7rem;
-            }
         }
 
         .crm-section {
@@ -6827,77 +6285,6 @@
             flex: 1;
             line-height: 1.4;
         }
-        
-        /* Mobile responsive progress bars and demo elements */
-        @media (max-width: 768px) {
-            .progress-bar {
-                width: 80px;
-                height: 5px;
-            }
-            
-            .transcription-section {
-                padding: 15px;
-            }
-            
-            .transcription-section h4 {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
-            }
-            
-            .transcript-line {
-                padding: 8px;
-                gap: 10px;
-            }
-            
-            .timestamp {
-                min-width: 35px;
-                font-size: 0.75rem;
-            }
-            
-            .speaker {
-                min-width: 55px;
-                font-size: 0.9rem;
-            }
-            
-            .text {
-                font-size: 0.85rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .progress-bar {
-                width: 70px;
-                height: 4px;
-            }
-            
-            .transcription-section {
-                padding: 12px;
-            }
-            
-            .transcription-section h4 {
-                font-size: 1rem;
-                margin-bottom: 12px;
-            }
-            
-            .transcript-line {
-                padding: 6px;
-                gap: 8px;
-            }
-            
-            .timestamp {
-                min-width: 30px;
-                font-size: 0.7rem;
-            }
-            
-            .speaker {
-                min-width: 50px;
-                font-size: 0.85rem;
-            }
-            
-            .text {
-                font-size: 0.8rem;
-            }
-        }
 
         .ai-insights-section {
             background: rgba(255, 255, 255, 0.05);
@@ -6916,49 +6303,6 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-        }
-        
-        /* Mobile responsive AI insights */
-        @media (max-width: 768px) {
-            .ai-insights-section {
-                padding: 15px;
-                margin-top: 15px;
-            }
-            
-            .ai-insights-section h4 {
-                font-size: 1rem;
-                margin-bottom: 12px;
-            }
-            
-            .insights-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .insight-card {
-                padding: 12px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .ai-insights-section {
-                padding: 12px;
-                margin-top: 12px;
-            }
-            
-            .ai-insights-section h4 {
-                font-size: 0.95rem;
-                margin-bottom: 10px;
-            }
-            
-            .insights-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-            
-            .insight-card {
-                padding: 10px;
-            }
         }
 
         .insight-card {
