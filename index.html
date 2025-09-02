@@ -1917,6 +1917,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-header {
@@ -1928,12 +1929,15 @@
         }
 
         .project-title {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--text-primary);
             margin: 0;
             flex: 1;
             line-height: 1.3;
+            min-height: 45px;
+            display: flex;
+            align-items: center;
         }
 
         .project-badge {
@@ -1951,10 +1955,13 @@
 
         .project-description {
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.4;
             margin-bottom: 20px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             flex: 1;
+            min-height: 55px;
+            display: flex;
+            align-items: flex-start;
         }
 
         .project-tech {
@@ -1962,6 +1969,8 @@
             flex-wrap: wrap;
             gap: 6px;
             margin-bottom: 20px;
+            min-height: 35px;
+            align-items: center;
         }
 
         .tech-tag {
@@ -1984,6 +1993,8 @@
             display: flex;
             gap: 12px;
             margin-top: auto;
+            align-items: flex-end;
+            min-height: 50px;
         }
 
         .action-btn {
@@ -3483,6 +3494,32 @@
             color: var(--text-primary);
         }
 
+        /* Mobile responsive projects */
+        @media (max-width: 768px) {
+            .project-item {
+                min-height: 450px;
+            }
+            
+            .project-title {
+                font-size: 1rem;
+                min-height: 40px;
+            }
+            
+            .project-description {
+                font-size: 0.75rem;
+                min-height: 50px;
+                line-height: 1.3;
+            }
+            
+            .project-tech {
+                min-height: 30px;
+            }
+            
+            .project-actions {
+                min-height: 45px;
+            }
+        }
+
         /* Mobile responsive FAB */
         @media (max-width: 768px) {
             .fab-options {
@@ -3635,6 +3672,1572 @@
             border-radius: 15px;
             padding: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Voice Bot Demo Styles */
+        .voice-bot-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .language-selection {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .language-selection h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .language-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+
+        .voice-interaction {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .voice-status {
+            margin-bottom: 20px;
+        }
+
+        .mic-button {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .mic-button:hover {
+            transform: scale(1.1);
+            background: var(--accent-secondary);
+        }
+
+        .status-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .voice-output {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .output-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .output-text {
+            color: var(--text-primary);
+            font-size: 1rem;
+            min-height: 40px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Excel Automation Demo Styles */
+        .excel-automation-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .workflow-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .workflow-section h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .workflow-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .workflow-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .workflow-step.active {
+            border-left: 4px solid var(--accent-primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .step-description {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        /* Legal Document Analysis Demo Styles */
+        .legal-analysis-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .document-processing {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .document-processing h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .document-stages {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .stage-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .stage-item.completed {
+            border-left: 4px solid #22c55e;
+        }
+
+        .stage-item.active {
+            border-left: 4px solid var(--accent-primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .stage-icon {
+            font-size: 1.5rem;
+        }
+
+        .stage-info {
+            flex: 1;
+        }
+
+        .stage-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .stage-status {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .extraction-results {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .extraction-results h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .extraction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .extraction-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .extraction-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+        }
+
+        .extraction-value {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .qc-workflow {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .qc-workflow h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .qc-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .qc-step {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .qc-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .qc-title {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* MOM Automation Demo Styles */
+        .mom-automation-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .meeting-input-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .meeting-input-section h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .meeting-controls {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .recording-status {
+            text-align: center;
+        }
+
+        .record-button {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .record-button:hover {
+            transform: scale(1.1);
+            background: var(--accent-secondary);
+        }
+
+        .status-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .meeting-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .info-item label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .info-item input,
+        .info-item span {
+            color: var(--text-primary);
+            font-weight: 500;
+            background: none;
+            border: none;
+            outline: none;
+        }
+
+        .processing-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .processing-section h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .processing-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .processing-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .processing-step.completed {
+            border-left: 4px solid #22c55e;
+        }
+
+        .processing-step.active {
+            border-left: 4px solid var(--accent-primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .step-icon {
+            font-size: 1.5rem;
+        }
+
+        .step-info {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .step-status {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .mom-preview {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mom-preview h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .mom-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mom-section h5 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin: 0 0 15px 0;
+        }
+
+        .mom-details {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-item .label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .detail-item .value {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .discussion-points {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .point-item {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            padding: 5px 0;
+        }
+
+        .action-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .action-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .action-text {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        .assignee {
+            color: var(--accent-primary);
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 0 15px;
+        }
+
+        .deadline {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .email-integration {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .email-integration h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .email-status {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .status-icon {
+            font-size: 1.5rem;
+        }
+
+        .status-text {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-right: 20px;
+        }
+
+        .email-preview {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .email-subject {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .email-recipients {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+
+        .email-body {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .email-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .action-btn.primary {
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .action-btn.primary:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Enhanced Voice Bot Demo Styles */
+        .pipeline-overview {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .pipeline-overview h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .pipeline-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .pipeline-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .step-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .step-label {
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .step-desc {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            text-align: center;
+        }
+
+        .pipeline-arrow {
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .live-demo-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .live-demo-section h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .customer-side h5,
+        .ai-processing h5 {
+            margin: 0 0 15px 0;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .call-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .call-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            font-size: 0.9rem;
+        }
+
+        .call-indicator.active {
+            color: #22c55e;
+        }
+
+        .call-timer {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .customer-query {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .query-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+
+        .query-text {
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .processing-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .processing-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .processing-step.active {
+            border-left: 4px solid var(--accent-primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .processing-step.completed {
+            border-left: 4px solid #22c55e;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .step-icon {
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .step-status {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+
+        .crm-integration {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .crm-integration h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .crm-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .crm-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .crm-section h6 {
+            margin: 0 0 15px 0;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .customer-info,
+        .ticket-info,
+        .analytics-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row .label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .info-row .value {
+            color: var(--text-primary);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .ticket-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ticket-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .ticket-id {
+            color: var(--accent-primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .ticket-status {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .ticket-status.new {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+        }
+
+        .ticket-details {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .ticket-type,
+        .ticket-priority,
+        .ticket-assignee {
+            color: var(--text-primary);
+            font-size: 0.8rem;
+        }
+
+        .analytics-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .metric-value {
+            display: block;
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+        }
+
+        .human-escalation {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .human-escalation h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .escalation-flow {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .escalation-trigger h6,
+        .escalation-process h6 {
+            margin: 0 0 15px 0;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .trigger-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .trigger-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .trigger-icon {
+            font-size: 1.2rem;
+        }
+
+        .trigger-text {
+            color: var(--text-primary);
+            font-size: 0.8rem;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .process-step .step-number {
+            width: 24px;
+            height: 24px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: white;
+                            font-weight: 600;
+                            font-size: 0.8rem;
+                        }
+
+                        .process-step .step-content {
+                            flex: 1;
+                        }
+
+                        .process-step .step-title {
+                            color: var(--text-primary);
+                            font-weight: 600;
+                            font-size: 0.8rem;
+                            margin-bottom: 4px;
+                        }
+
+                        .process-step .step-desc {
+                            color: var(--text-secondary);
+                            font-size: 0.7rem;
+                        }
+
+                        .demo-controls {
+                            background: rgba(255, 255, 255, 0.05);
+                            border-radius: 15px;
+                            padding: 20px;
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                        }
+
+                        .demo-controls h4 {
+                            margin: 0 0 20px 0;
+                            color: var(--text-primary);
+                            font-size: 1.2rem;
+                        }
+
+                        .control-buttons {
+                            display: flex;
+                            gap: 15px;
+                            margin-bottom: 20px;
+                        }
+
+                        .control-btn {
+                            padding: 12px 24px;
+                            border: none;
+                            border-radius: 8px;
+                            font-weight: 600;
+                            font-size: 0.9rem;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        }
+
+                        .control-btn.primary {
+                            background: var(--accent-primary);
+                            color: white;
+                        }
+
+                        .control-btn.primary:hover {
+                            background: var(--accent-secondary);
+                            transform: translateY(-2px);
+                        }
+
+                        .control-btn.secondary {
+                            background: rgba(255, 255, 255, 0.1);
+                            color: var(--text-primary);
+                            border: 1px solid rgba(255, 255, 255, 0.2);
+                        }
+
+                        .control-btn.secondary:hover {
+                            background: rgba(255, 255, 255, 0.2);
+                            transform: translateY(-2px);
+                        }
+
+                        .demo-status {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                        }
+
+                        .status-indicator {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                        }
+
+                        .status-dot {
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background: var(--text-secondary);
+                        }
+
+                        .status-dot.active {
+                            background: #22c55e;
+                            animation: pulse 2s infinite;
+                        }
+
+                                .status-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Live Text Demo Styles */
+        .live-text-demo {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+        }
+
+        .live-text-demo h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .live-text-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .text-update {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-update.incoming {
+            border-left: 4px solid #22c55e;
+        }
+
+        .text-update.outgoing {
+            border-left: 4px solid #3b82f6;
+        }
+
+        .update-label {
+            font-weight: 600;
+            color: var(--accent-primary);
+            font-size: 0.9rem;
+            min-width: 80px;
+        }
+
+        .update-text {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            line-height: 1.4;
+            flex: 1;
+            transition: all 0.3s ease;
+        }
+
+        .text-update.incoming .update-text {
+            color: #22c55e;
+        }
+
+        .text-update.outgoing .update-text {
+            color: #3b82f6;
+        }
+
+        .live-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Live text animations */
+        .update-text {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .text-update.incoming .update-text {
+            animation: incomingPulse 2s ease-in-out infinite;
+        }
+
+        .text-update.outgoing .update-text {
+            animation: outgoingPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes incomingPulse {
+            0%, 100% { 
+                opacity: 1; 
+                transform: translateX(0);
+            }
+            50% { 
+                opacity: 0.8; 
+                transform: translateX(5px);
+            }
+        }
+
+        @keyframes outgoingPulse {
+            0%, 100% { 
+                opacity: 1; 
+                transform: translateX(0);
+            }
+            50% { 
+                opacity: 0.8; 
+                transform: translateX(-5px);
+            }
+        }
+
+        /* Mobile responsive styles for live text demo */
+        @media (max-width: 768px) {
+            .live-text-demo {
+                padding: 15px;
+                margin-top: 15px;
+            }
+
+            .live-text-demo h4 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+
+            .text-update {
+                padding: 12px;
+                gap: 8px;
+            }
+
+            .update-label {
+                font-size: 0.8rem;
+                min-width: 70px;
+            }
+
+            .update-text {
+                font-size: 0.85rem;
+                line-height: 1.3;
+            }
+        }
+
+        .business-scenario h4 {
+            margin: 0 0 15px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .scenario-description p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .real-world-demo {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .real-world-demo h4 {
+            margin: 0 0 15px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .query-examples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .query-btn {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .query-btn:hover {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+
+        .business-impact {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .business-impact h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .impact-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .impact-icon {
+            font-size: 2rem;
+        }
+
+        .impact-content {
+            flex: 1;
+        }
+
+        .impact-title {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+        }
+
+        .impact-value {
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .impact-desc {
+            color: var(--text-primary);
+            font-size: 0.8rem;
+        }
+
+        /* Enhanced Excel Automation Demo Styles */
+        .real-world-workflow {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .real-world-workflow h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .workflow-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+
+        .workflow-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .workflow-step {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: none;
+        }
+
+        .workflow-step.active {
+            display: block;
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .step-status {
+            color: var(--accent-primary);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .step-details {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .data-source,
+        .validation-item,
+        .report-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .source-icon,
+        .validation-icon,
+        .report-icon {
+            font-size: 1.2rem;
+        }
+
+        .source-name,
+        .validation-text,
+        .report-name {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        .source-status,
+        .validation-result,
+        .report-status {
+            color: var(--accent-primary);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .automation-benefits {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .automation-benefits h4 {
+            margin: 0 0 20px 0;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+        }
+
+        .benefit-content {
+            flex: 1;
+        }
+
+        .benefit-title {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+        }
+
+        .benefit-value {
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .benefit-desc {
+            color: var(--text-primary);
+            font-size: 0.8rem;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+            }
         }
 
         .dashboard-grid {
@@ -6231,6 +7834,159 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="project-item" data-category="voice-bot">
+                    <div class="project-preview">
+                        <div class="project-image">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-number">5+</span>
+                                    <span class="stat-label">Languages</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">95%</span>
+                                    <span class="stat-label">Accuracy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">🎤 AI Voice Bot with Regional Language Support</h3>
+                            <div class="project-badge">Multilingual AI</div>
+                        </div>
+                        <p class="project-description">Advanced voice bot with live text updates supporting Indian regional languages, real-time speech recognition, multilingual responses, and cultural context understanding.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Speech Recognition</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Regional Languages</span>
+                            <span class="tech-tag">Live Text Updates</span>
+                            <span class="tech-tag">Real-time Processing</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-play-circle"></i> Experience Prototype
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="excel-automation">
+                    <div class="project-preview">
+                        <div class="project-image">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-number">80%</span>
+                                    <span class="stat-label">Time Saved</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">1000+</span>
+                                    <span class="stat-label">Files Processed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">📊 Excel Automation & Data Processing</h3>
+                            <div class="project-badge">Automation</div>
+                        </div>
+                        <p class="project-description">Comprehensive Excel automation workflows for data cleaning, analysis, and reporting with advanced macros, VBA scripting, and Python integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">VBA</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Data Processing</span>
+                            <span class="tech-tag">Excel APIs</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-play-circle"></i> Experience Prototype
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="legal-document">
+                    <div class="project-preview">
+                        <div class="project-image">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-number">99.2%</span>
+                                    <span class="stat-label">Accuracy</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">50K+</span>
+                                    <span class="stat-label">Documents</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">⚖️ Legal Document Analysis & QC Workflow</h3>
+                            <div class="project-badge">AI Excellence</div>
+                        </div>
+                        <p class="project-description">Hybrid AI solution supporting Indian regional languages with advanced document analysis, section-wise prompting for enhanced data extraction accuracy, and robust QC workflow.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">Document Analysis</span>
+                            <span class="tech-tag">Quality Control</span>
+                            <span class="tech-tag">Regional NLP</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-play-circle"></i> Experience Prototype
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item" data-category="mom-automation">
+                    <div class="project-preview">
+                        <div class="project-image">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-number">90%</span>
+                                    <span class="stat-label">Time Saved</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">500+</span>
+                                    <span class="stat-label">Meetings</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">📋 MOM Automation & Email Integration</h3>
+                            <div class="project-badge">Smart Automation</div>
+                        </div>
+                        <p class="project-description">Intelligent meeting minutes automation that automatically generates, summarizes, and sends MOM via email with AI-powered action item tracking and follow-up reminders.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">Email Automation</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-play-circle"></i> Experience Prototype
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -7086,6 +8842,697 @@ LinkedIn: https://www.linkedin.com/in/nithiyanandham-r-23094092`;
                         `;
                         break;
                         
+                    case 'voice-bot':
+                        demoContent = `
+                            <div class="interactive-demo voice-bot-demo">
+                                <div class="demo-header">
+                                    <h3>🎤 AI Voice Bot - End-to-End Voice AI Pipeline</h3>
+                                    <p>Complete STT → ASR → TTS → CRM Integration → Human Agent Escalation</p>
+                                </div>
+                                <div class="voice-bot-container">
+                                    <div class="pipeline-overview">
+                                        <h4>🔄 Complete Voice AI Pipeline</h4>
+                                        <div class="pipeline-flow">
+                                            <div class="pipeline-step">
+                                                <div class="step-icon">🎤</div>
+                                                <div class="step-label">STT</div>
+                                                <div class="step-desc">Speech to Text</div>
+                                            </div>
+                                            <div class="pipeline-arrow">→</div>
+                                            <div class="pipeline-step">
+                                                <div class="step-icon">🧠</div>
+                                                <div class="step-label">ASR</div>
+                                                <div class="step-desc">Automatic Speech Recognition</div>
+                                            </div>
+                                            <div class="pipeline-arrow">→</div>
+                                            <div class="pipeline-step">
+                                                <div class="step-icon">💬</div>
+                                                <div class="step-label">NLP</div>
+                                                <div class="step-desc">Natural Language Processing</div>
+                                            </div>
+                                            <div class="pipeline-arrow">→</div>
+                                            <div class="pipeline-step">
+                                                <div class="step-icon">🔍</div>
+                                                <div class="step-label">Intent</div>
+                                                <div class="step-desc">Query Classification</div>
+                                            </div>
+                                            <div class="pipeline-arrow">→</div>
+                                            <div class="pipeline-step">
+                                                <div class="step-icon">📝</div>
+                                                <div class="step-label">Response</div>
+                                                <div class="step-desc">Generate Answer</div>
+                                            </div>
+                                            <div class="pipeline-arrow">→</div>
+                                            <div class="pipeline-step">
+                                                <div class="step-icon">🔊</div>
+                                                <div class="step-label">TTS</div>
+                                                <div class="step-desc">Text to Speech</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="live-demo-section">
+                                        <h4>🎬 Live Voice Bot Demo</h4>
+                                        <div class="demo-container">
+                                            <div class="customer-side">
+                                                <h5>👤 Customer Call</h5>
+                                                <div class="call-status">
+                                                    <div class="call-indicator active">
+                                                        <i class="fas fa-phone"></i>
+                                                        <span>Call Connected</span>
+                                                    </div>
+                                                    <div class="call-timer">00:15</div>
+                                                </div>
+                                                <div class="customer-query">
+                                                    <div class="query-label">Customer Says:</div>
+                                                    <div class="query-text" id="customerQuery">"Where is my order number 12345?"</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="ai-processing">
+                                                <h5>🤖 AI Processing</h5>
+                                                <div class="processing-steps">
+                                                    <div class="processing-step active" data-step="stt">
+                                                        <div class="step-icon">🎤</div>
+                                                        <div class="step-content">
+                                                            <div class="step-title">STT Processing</div>
+                                                            <div class="step-status">Converting speech to text...</div>
+                                                            <div class="progress-bar">
+                                                                <div class="progress-fill" style="width: 75%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="processing-step" data-step="asr">
+                                                        <div class="step-icon">🧠</div>
+                                                        <div class="step-content">
+                                                            <div class="step-title">ASR Analysis</div>
+                                                            <div class="step-status">Recognizing language & accent...</div>
+                                                            <div class="progress-bar">
+                                                                <div class="progress-fill" style="width: 0%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="processing-step" data-step="nlp">
+                                                        <div class="step-icon">💬</div>
+                                                        <div class="step-content">
+                                                            <div class="step-title">NLP Processing</div>
+                                                            <div class="step-status">Understanding intent...</div>
+                                                            <div class="progress-bar">
+                                                                <div class="progress-fill" style="width: 0%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="processing-step" data-step="intent">
+                                                        <div class="step-icon">🔍</div>
+                                                        <div class="step-content">
+                                                            <div class="step-title">Intent Classification</div>
+                                                            <div class="step-status">Identifying query type...</div>
+                                                            <div class="progress-bar">
+                                                                <div class="progress-fill" style="width: 0%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="processing-step" data-step="response">
+                                                        <div class="step-icon">📝</div>
+                                                        <div class="step-content">
+                                                            <div class="step-title">Response Generation</div>
+                                                            <div class="step-status">Generating answer...</div>
+                                                            <div class="progress-bar">
+                                                                <div class="progress-fill" style="width: 0%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="processing-step" data-step="tts">
+                                                        <div class="step-icon">🔊</div>
+                                                        <div class="step-content">
+                                                            <div class="step-title">TTS Conversion</div>
+                                                            <div class="step-status">Converting to speech...</div>
+                                                            <div class="progress-bar">
+                                                                <div class="progress-fill" style="width: 0%"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="crm-integration">
+                                        <h4>🔗 CRM & Ticket Tool Integration</h4>
+                                        <div class="crm-dashboard">
+                                            <div class="crm-section">
+                                                <h6>📊 Customer Profile</h6>
+                                                <div class="customer-info">
+                                                    <div class="info-row">
+                                                        <span class="label">Customer ID:</span>
+                                                        <span class="value">CUST-78945</span>
+                                                    </div>
+                                                    <div class="info-row">
+                                                        <span class="label">Order History:</span>
+                                                        <span class="value">15 orders</span>
+                                                    </div>
+                                                    <div class="info-row">
+                                                        <span class="label">Language:</span>
+                                                        <span class="value">English</span>
+                                                    </div>
+                                                    <div class="info-row">
+                                                        <span class="label">Priority:</span>
+                                                        <span class="value">Gold Member</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="crm-section">
+                                                <h6>🎫 Ticket Management</h6>
+                                                <div class="ticket-info">
+                                                    <div class="ticket-item">
+                                                        <div class="ticket-header">
+                                                            <span class="ticket-id">#TKT-2025-001</span>
+                                                            <span class="ticket-status new">New</span>
+                                                        </div>
+                                                        <div class="ticket-details">
+                                                            <div class="ticket-type">Order Status Query</div>
+                                                            <div class="ticket-priority">Medium</div>
+                                                            <div class="ticket-assignee">AI Bot</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="crm-section">
+                                                <h6>📈 Analytics</h6>
+                                                <div class="analytics-info">
+                                                    <div class="metric">
+                                                        <span class="metric-value">94%</span>
+                                                        <span class="metric-label">Resolution Rate</span>
+                                                    </div>
+                                                    <div class="metric">
+                                                        <span class="metric-value">2.3 min</span>
+                                                        <span class="metric-label">Avg Response Time</span>
+                                                    </div>
+                                                    <div class="metric">
+                                                        <span class="metric-value">87%</span>
+                                                        <span class="metric-label">Customer Satisfaction</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="human-escalation">
+                                        <h4>👨‍💼 Human Agent Escalation</h4>
+                                        <div class="escalation-flow">
+                                            <div class="escalation-trigger">
+                                                <h6>🚨 Escalation Triggers</h6>
+                                                <div class="trigger-list">
+                                                    <div class="trigger-item">
+                                                        <span class="trigger-icon">⚠️</span>
+                                                        <span class="trigger-text">Complex technical issues</span>
+                                                    </div>
+                                                    <div class="trigger-item">
+                                                        <span class="trigger-icon">😠</span>
+                                                        <span class="trigger-text">Customer dissatisfaction</span>
+                                                    </div>
+                                                    <div class="trigger-item">
+                                                        <span class="trigger-icon">🔒</span>
+                                                        <span class="trigger-text">Security concerns</span>
+                                                    </div>
+                                                    <div class="trigger-item">
+                                                        <span class="trigger-icon">📞</span>
+                                                        <span class="trigger-text">Multiple failed attempts</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="escalation-process">
+                                                <h6>🔄 Escalation Process</h6>
+                                                <div class="process-steps">
+                                                    <div class="process-step">
+                                                        <div class="step-number">1</div>
+                                                        <div class="step-content">
+                                                            <div class="step-title">AI Detection</div>
+                                                            <div class="step-desc">Bot identifies escalation need</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="process-step">
+                                                        <div class="step-number">2</div>
+                                                        <div class="step-content">
+                                                            <div class="step-title">Context Transfer</div>
+                                                            <div class="step-desc">Full conversation history shared</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="process-step">
+                                                        <div class="step-number">3</div>
+                                                        <div class="step-content">
+                                                            <div class="step-title">Agent Assignment</div>
+                                                            <div class="step-desc">Best available agent selected</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="process-step">
+                                                        <div class="step-number">4</div>
+                                                        <div class="step-content">
+                                                            <div class="step-title">Seamless Handoff</div>
+                                                            <div class="step-desc">Customer connected to human</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="live-text-demo">
+                                        <h4>📝 Live Text Updates</h4>
+                                        <div class="live-text-container">
+                                            <div class="text-update incoming">
+                                                <div class="update-label">Incoming:</div>
+                                                <div class="update-text" id="incomingText">Customer query received...</div>
+                                            </div>
+                                            <div class="text-update outgoing">
+                                                <div class="update-label">Outgoing:</div>
+                                                <div class="update-text" id="outgoingText">AI response generated...</div>
+                                            </div>
+                                        </div>
+                                        <div class="live-status">
+                                            <div class="status-indicator">
+                                                <span class="status-dot active"></span>
+                                                <span class="status-text">Live Demo Active</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'excel-automation':
+                        demoContent = `
+                            <div class="interactive-demo excel-demo">
+                                <div class="demo-header">
+                                    <h3>📊 Excel Automation - Real-World Business Solution</h3>
+                                    <p>Automated financial reporting and data processing for enterprise clients</p>
+                                </div>
+                                <div class="excel-automation-container">
+                                    <div class="business-scenario">
+                                        <h4>🏢 Business Challenge: Financial Reporting Chaos</h4>
+                                        <div class="scenario-description">
+                                            <p>A multinational corporation processes 500+ Excel files monthly for financial reporting. 
+                                            Manual processing takes 40 hours/week. Our automation reduces this to 2 hours with 99.9% accuracy.</p>
+                                        </div>
+                                    </div>
+                                    <div class="real-world-workflow">
+                                        <h4>🎯 Real Business Workflow</h4>
+                                        <div class="workflow-tabs">
+                                            <button class="tab-btn active" data-tab="monthly">Monthly Close</button>
+                                            <button class="tab-btn" data-tab="quarterly">Quarterly Review</button>
+                                            <button class="tab-btn" data-tab="annual">Annual Audit</button>
+                                        </div>
+                                        <div class="workflow-content">
+                                            <div class="workflow-step active" data-step="monthly">
+                                                <div class="step-header">
+                                                    <div class="step-number">1</div>
+                                                    <div class="step-title">Data Consolidation</div>
+                                                    <div class="step-status">Processing...</div>
+                                                </div>
+                                                <div class="step-details">
+                                                    <div class="data-source">
+                                                        <span class="source-icon">📁</span>
+                                                        <span class="source-name">ERP System Export</span>
+                                                        <span class="source-status">✓ Connected</span>
+                                                    </div>
+                                                    <div class="data-source">
+                                                        <span class="source-icon">📊</span>
+                                                        <span class="source-name">Bank Statements</span>
+                                                        <span class="source-status">✓ Connected</span>
+                                                    </div>
+                                                    <div class="data-source">
+                                                        <span class="source-icon">💳</span>
+                                                        <span class="source-name">Credit Card Data</span>
+                                                        <span class="source-status">✓ Connected</span>
+                                                    </div>
+                                                    <div class="progress-bar">
+                                                        <div class="progress-fill" style="width: 85%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="workflow-step" data-step="quarterly">
+                                                <div class="step-header">
+                                                    <div class="step-number">2</div>
+                                                    <div class="step-title">Data Validation & Cleaning</div>
+                                                    <div class="step-status">In Progress</div>
+                                                </div>
+                                                <div class="step-details">
+                                                    <div class="validation-item">
+                                                        <span class="validation-icon">🔍</span>
+                                                        <span class="validation-text">Duplicate Detection</span>
+                                                        <span class="validation-result">Found 23 duplicates</span>
+                                                    </div>
+                                                    <div class="validation-item">
+                                                        <span class="validation-icon">📝</span>
+                                                        <span class="validation-text">Format Standardization</span>
+                                                        <span class="validation-result">Applied corporate format</span>
+                                                    </div>
+                                                    <div class="validation-item">
+                                                        <span class="validation-icon">✅</span>
+                                                        <span class="validation-text">Data Integrity Check</span>
+                                                        <span class="validation-result">All records validated</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="workflow-step" data-step="annual">
+                                                <div class="step-header">
+                                                    <div class="step-number">3</div>
+                                                    <div class="step-title">Report Generation</div>
+                                                    <div class="step-status">Pending</div>
+                                                </div>
+                                                <div class="step-details">
+                                                    <div class="report-item">
+                                                        <span class="report-icon">📊</span>
+                                                        <span class="report-name">P&L Statement</span>
+                                                        <span class="report-status">Ready</span>
+                                                    </div>
+                                                    <div class="report-item">
+                                                        <span class="report-icon">💰</span>
+                                                        <span class="report-name">Cash Flow Analysis</span>
+                                                        <span class="report-status">Ready</span>
+                                                    </div>
+                                                    <div class="report-item">
+                                                        <span class="report-icon">📈</span>
+                                                        <span class="report-name">Budget vs Actual</span>
+                                                        <span class="report-status">Ready</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="automation-benefits">
+                                        <h4>🚀 Automation Benefits</h4>
+                                        <div class="benefits-grid">
+                                            <div class="benefit-item">
+                                                <div class="benefit-icon">⏰</div>
+                                                <div class="benefit-content">
+                                                    <div class="benefit-title">Time Savings</div>
+                                                    <div class="benefit-value">95%</div>
+                                                    <div class="benefit-desc">From 40 hours to 2 hours/week</div>
+                                                </div>
+                                            </div>
+                                            <div class="benefit-item">
+                                                <div class="benefit-icon">🎯</div>
+                                                <div class="benefit-content">
+                                                    <div class="benefit-title">Accuracy</div>
+                                                    <div class="benefit-value">99.9%</div>
+                                                    <div class="benefit-desc">Eliminates human errors</div>
+                                                </div>
+                                            </div>
+                                            <div class="benefit-item">
+                                                <div class="benefit-icon">💰</div>
+                                                <div class="benefit-content">
+                                                    <div class="benefit-title">Cost Reduction</div>
+                                                    <div class="benefit-value">$50K/year</div>
+                                                    <div class="benefit-desc">Reduced processing costs</div>
+                                                </div>
+                                            </div>
+                                            <div class="benefit-item">
+                                                <div class="benefit-icon">📊</div>
+                                                <div class="benefit-content">
+                                                    <div class="benefit-title">Compliance</div>
+                                                    <div class="benefit-value">100%</div>
+                                                    <div class="benefit-desc">Audit-ready reports</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'legal-document':
+                        demoContent = `
+                            <div class="interactive-demo legal-demo">
+                                <div class="demo-header">
+                                    <h3>⚖️ Legal Document Analysis & QC Workflow</h3>
+                                    <p>Hybrid AI solution with advanced document analysis and quality control</p>
+                                </div>
+                                <div class="legal-analysis-container">
+                                    <div class="document-processing">
+                                        <h4>📄 Document Processing</h4>
+                                        <div class="document-stages">
+                                            <div class="stage-item completed">
+                                                <div class="stage-icon">📥</div>
+                                                <div class="stage-info">
+                                                    <div class="stage-title">Document Upload</div>
+                                                    <div class="stage-status">Completed</div>
+                                                </div>
+                                            </div>
+                                            <div class="stage-item active">
+                                                <div class="stage-icon">🔍</div>
+                                                <div class="stage-info">
+                                                    <div class="stage-title">AI Analysis</div>
+                                                    <div class="stage-status">Processing...</div>
+                                                    <div class="progress-bar">
+                                                        <div class="progress-fill" style="width: 65%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stage-item">
+                                                <div class="stage-icon">📝</div>
+                                                <div class="stage-info">
+                                                    <div class="stage-title">Data Extraction</div>
+                                                    <div class="stage-status">Pending</div>
+                                                </div>
+                                            </div>
+                                            <div class="stage-item">
+                                                <div class="stage-icon">✅</div>
+                                                <div class="stage-info">
+                                                    <div class="stage-title">Quality Control</div>
+                                                    <div class="stage-status">Pending</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="extraction-results">
+                                        <h4>🔍 Extraction Results</h4>
+                                        <div class="extraction-grid">
+                                            <div class="extraction-item">
+                                                <div class="extraction-label">Document Type:</div>
+                                                <div class="extraction-value">Legal Contract</div>
+                                            </div>
+                                            <div class="extraction-item">
+                                                <div class="extraction-label">Parties:</div>
+                                                <div class="extraction-value">Company A & Company B</div>
+                                            </div>
+                                            <div class="extraction-item">
+                                                <div class="extraction-label">Contract Value:</div>
+                                                <div class="extraction-value">$500,000</div>
+                                            </div>
+                                            <div class="extraction-item">
+                                                <div class="extraction-label">Effective Date:</div>
+                                                <div class="extraction-value">January 15, 2025</div>
+                                            </div>
+                                            <div class="extraction-item">
+                                                <div class="extraction-label">Confidence Score:</div>
+                                                <div class="extraction-value">99.2%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="qc-workflow">
+                                        <h4>✅ Quality Control Workflow</h4>
+                                        <div class="qc-steps">
+                                            <div class="qc-step">
+                                                <div class="qc-icon">🔍</div>
+                                                <div class="qc-title">Review Extracted Data</div>
+                                            </div>
+                                            <div class="qc-step">
+                                                <div class="qc-icon">⚠️</div>
+                                                <div class="qc-title">Flag Low-Quality Documents</div>
+                                            </div>
+                                            <div class="qc-step">
+                                                <div class="qc-icon">📝</div>
+                                                <div class="qc-title">Manual Data Capture</div>
+                                            </div>
+                                            <div class="qc-step">
+                                                <div class="qc-icon">📊</div>
+                                                <div class="qc-title">Report Management</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="demo-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-value">99.2%</span>
+                                            <span class="stat-label">Accuracy</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-value">50K+</span>
+                                            <span class="stat-label">Documents</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-value">5+</span>
+                                            <span class="stat-label">Languages</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'mom-automation':
+                        demoContent = `
+                            <div class="interactive-demo mom-demo">
+                                <div class="demo-header">
+                                    <h3>📋 MOM Automation & Email Integration</h3>
+                                    <p>Intelligent meeting minutes automation with email integration</p>
+                                </div>
+                                <div class="mom-automation-container">
+                                    <div class="meeting-input-section">
+                                        <h4>🎤 Meeting Recording Input</h4>
+                                        <div class="meeting-controls">
+                                            <div class="recording-status">
+                                                <div class="record-button">
+                                                    <i class="fas fa-microphone"></i>
+                                                </div>
+                                                <div class="status-text">Click to start recording</div>
+                                            </div>
+                                            <div class="meeting-info">
+                                                <div class="info-item">
+                                                    <label>Meeting Title:</label>
+                                                    <input type="text" value="Q4 Strategy Planning" readonly>
+                                                </div>
+                                                <div class="info-item">
+                                                    <label>Duration:</label>
+                                                    <span>45:30</span>
+                                                </div>
+                                                <div class="info-item">
+                                                    <label>Participants:</label>
+                                                    <span>8 attendees</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="processing-section">
+                                        <h4>⚙️ AI Processing Pipeline</h4>
+                                        <div class="processing-steps">
+                                            <div class="processing-step completed">
+                                                <div class="step-icon">🎤</div>
+                                                <div class="step-info">
+                                                    <div class="step-title">Audio Transcription</div>
+                                                    <div class="step-status">Completed</div>
+                                                </div>
+                                            </div>
+                                            <div class="processing-step active">
+                                                <div class="step-icon">🧠</div>
+                                                <div class="step-info">
+                                                    <div class="step-title">AI Analysis</div>
+                                                    <div class="step-status">Processing...</div>
+                                                    <div class="progress-bar">
+                                                        <div class="progress-fill" style="width: 75%"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="processing-step">
+                                                <div class="step-icon">📝</div>
+                                                <div class="step-info">
+                                                    <div class="step-title">MOM Generation</div>
+                                                    <div class="step-status">Pending</div>
+                                                </div>
+                                            </div>
+                                            <div class="processing-step">
+                                                <div class="step-icon">📧</div>
+                                                <div class="step-info">
+                                                    <div class="step-title">Email Dispatch</div>
+                                                    <div class="step-status">Pending</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mom-preview">
+                                        <h4>📋 Generated MOM Preview</h4>
+                                        <div class="mom-content">
+                                            <div class="mom-section">
+                                                <h5>📅 Meeting Details</h5>
+                                                <div class="mom-details">
+                                                    <div class="detail-item">
+                                                        <span class="label">Date:</span>
+                                                        <span class="value">February 9, 2025</span>
+                                                    </div>
+                                                    <div class="detail-item">
+                                                        <span class="label">Time:</span>
+                                                        <span class="value">10:00 AM - 10:45 AM</span>
+                                                    </div>
+                                                    <div class="detail-item">
+                                                        <span class="label">Location:</span>
+                                                        <span class="value">Conference Room A</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mom-section">
+                                                <h5>📋 Key Discussion Points</h5>
+                                                <div class="discussion-points">
+                                                    <div class="point-item">• Q4 revenue projections and targets</div>
+                                                    <div class="point-item">• Marketing strategy for holiday season</div>
+                                                    <div class="point-item">• Resource allocation and budget planning</div>
+                                                    <div class="point-item">• Risk assessment and mitigation strategies</div>
+                                                </div>
+                                            </div>
+                                            <div class="mom-section">
+                                                <h5>✅ Action Items</h5>
+                                                <div class="action-items">
+                                                    <div class="action-item">
+                                                        <span class="action-text">Prepare detailed Q4 budget proposal</span>
+                                                        <span class="assignee">John Smith</span>
+                                                        <span class="deadline">Feb 15, 2025</span>
+                                                    </div>
+                                                    <div class="action-item">
+                                                        <span class="action-text">Develop marketing campaign timeline</span>
+                                                        <span class="assignee">Sarah Johnson</span>
+                                                        <span class="deadline">Feb 20, 2025</span>
+                                                    </div>
+                                                    <div class="action-item">
+                                                        <span class="action-text">Conduct risk assessment workshop</span>
+                                                        <span class="assignee">Mike Davis</span>
+                                                        <span class="deadline">Feb 25, 2025</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="email-integration">
+                                        <h4>📧 Email Integration Status</h4>
+                                        <div class="email-status">
+                                            <div class="status-item">
+                                                <span class="status-icon">📧</span>
+                                                <span class="status-text">MOM Summary Email</span>
+                                                <div class="email-preview">
+                                                    <div class="email-subject">Subject: Q4 Strategy Planning - Meeting Minutes</div>
+                                                    <div class="email-recipients">To: john.smith@company.com, sarah.johnson@company.com, mike.davis@company.com</div>
+                                                    <div class="email-body">Dear Team, Please find attached the meeting minutes for our Q4 Strategy Planning session...</div>
+                                                </div>
+                                            </div>
+                                            <div class="email-actions">
+                                                <button class="action-btn primary">
+                                                    <i class="fas fa-paper-plane"></i> Send Email
+                                                </button>
+                                                <button class="action-btn secondary">
+                                                    <i class="fas fa-download"></i> Download MOM
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="demo-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-value">90%</span>
+                                            <span class="stat-label">Time Saved</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-value">500+</span>
+                                            <span class="stat-label">Meetings</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-value">Auto</span>
+                                            <span class="stat-label">Email Dispatch</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                        
                     case 'video':
                         demoContent = `
                             <div class="interactive-demo video-analytics-demo">
@@ -7646,6 +10093,14 @@ LinkedIn: https://www.linkedin.com/in/nithiyanandham-r-23094092`;
                             // Initialize demo-specific functionality
             if (demoType === 'ai') {
                 initializeChatDemo();
+            } else if (demoType === 'voice-bot') {
+                initializeLiveTextDemo();
+            } else if (demoType === 'excel-automation') {
+                initializeExcelDemo();
+            } else if (demoType === 'legal-document') {
+                initializeLegalDemo();
+            } else if (demoType === 'mom-automation') {
+                initializeMomDemo();
             } else if (demoType === 'analytics') {
                 initializeDashboardDemo();
             } else if (demoType === 'video') {
@@ -7734,7 +10189,285 @@ LinkedIn: https://www.linkedin.com/in/nithiyanandham-r-23094092`;
             });
         });
 
-        // Interactive Demo Functions
+        // Live Text Demo Functions
+        function initializeLiveTextDemo() {
+            const incomingText = document.getElementById('incomingText');
+            const outgoingText = document.getElementById('outgoingText');
+            const processingSteps = document.querySelectorAll('.processing-step');
+            const callTimer = document.querySelector('.call-timer');
+            const customerQuery = document.getElementById('customerQuery');
+            const statusText = document.querySelector('.status-text');
+            const statusDot = document.querySelector('.status-dot');
+            
+            if (!incomingText || !outgoingText || !processingSteps.length) return;
+
+            // Language selection
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    langBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const lang = this.getAttribute('data-lang');
+                    const langText = this.textContent;
+                    voiceOutput.textContent = `Language changed to: ${langText}`;
+                    
+                    // Update live text demo
+                    incomingText.textContent = `Language preference updated to ${langText}`;
+                    setTimeout(() => {
+                        outgoingText.textContent = `AI system configured for ${langText} language processing`;
+                    }, 800);
+                });
+            });
+
+            // Dynamic text updates for live demo
+            function updateLiveText() {
+                const incomingMessages = [
+                    "Customer: Where is my order number 12345?",
+                    "Customer: I need help with a refund",
+                    "Customer: What's the delivery status?",
+                    "Customer: Payment failed, what should I do?",
+                    "Customer: Can you speak in Hindi?",
+                    "Customer: I prefer Tamil language"
+                ];
+                
+                const outgoingMessages = [
+                    "AI: I can help you track your order. Let me check the system...",
+                    "AI: I understand you need a refund. Please provide your order details.",
+                    "AI: Your delivery is scheduled for tomorrow between 2-4 PM.",
+                    "AI: I see the payment issue. Let me help you resolve this.",
+                    "AI: हाँ, मैं हिंदी में बात कर सकता हूं। कैसे मदद कर सकता हूं?",
+                    "AI: நான் தமிழில் பேச முடியும். எப்படி உதவ முடியும்?"
+                ];
+                
+                let messageIndex = 0;
+                
+                setInterval(() => {
+                    // Update incoming text
+                    incomingText.textContent = incomingMessages[messageIndex];
+                    incomingText.style.opacity = '0';
+                    setTimeout(() => {
+                        incomingText.style.opacity = '1';
+                    }, 200);
+                    
+                    // Update outgoing text after a delay
+                    setTimeout(() => {
+                        outgoingText.textContent = outgoingMessages[messageIndex];
+                        outgoingText.style.opacity = '0';
+                        setTimeout(() => {
+                            outgoingText.style.opacity = '1';
+                        }, 200);
+                    }, 1500);
+                    
+                    messageIndex = (messageIndex + 1) % incomingMessages.length;
+                }, 4000);
+            }
+            
+            // Start live text updates
+            updateLiveText();
+
+            // Query examples interaction
+            if (queryBtns.length) {
+                queryBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const query = this.getAttribute('data-query');
+                        const activeLang = document.querySelector('.lang-btn.active');
+                        const lang = activeLang.getAttribute('data-lang');
+                        
+                        // Simulate AI processing
+                        voiceOutput.textContent = 'Processing your query...';
+                        
+                        setTimeout(() => {
+                            const responses = {
+                                'order-status': {
+                                    'english': 'Your order #12345 is currently in transit and will be delivered by tomorrow.',
+                                    'hindi': 'आपका ऑर्डर #12345 वर्तमान में ट्रांजिट में है और कल तक डिलीवर हो जाएगा।',
+                                    'tamil': 'உங்கள் ஆர்டர் #12345 தற்போது போக்குவரத்தில் உள்ளது மற்றும் நாளை வரை வழங்கப்படும்.',
+                                    'telugu': 'మీ ఆర్డర్ #12345 ప్రస్తుతం ట్రాన్జిట్‌లో ఉంది మరియు రేపటి వరకు డెలివరీ చేయబడుతుంది.',
+                                    'kannada': 'ನಿಮ್ಮ ಆರ್ಡರ್ #12345 ಪ್ರಸ್ತುತ ಸಾಗಣೆಯಲ್ಲಿದೆ ಮತ್ತು ನಾಳೆ ವರೆಗೆ ತಲುಪಿಸಲಾಗುತ್ತದೆ.'
+                                },
+                                'refund': {
+                                    'english': 'I can help you with a refund. Please provide your order number and reason.',
+                                    'hindi': 'मैं आपको रिफंड में मदद कर सकता हूं। कृपया अपना ऑर्डर नंबर और कारण दें।',
+                                    'tamil': 'நான் உங்களுக்கு ரீபண்டில் உதவ முடியும். தயவுசெய்து உங்கள் ஆர்டர் எண் மற்றும் காரணத்தை வழங்கவும்.',
+                                    'telugu': 'నేను మీకు రీఫండ్‌లో సహాయపడగలను. దయచేసి మీ ఆర్డర్ నంబర్ మరియు కారణాన్ని అందించండి.',
+                                    'kannada': 'ನಾನು ನಿಮಗೆ ರೀಫಂಡ್‌ನಲ್ಲಿ ಸಹಾಯ ಮಾಡಬಹುದು. ದಯವಿಟ್ಟು ನಿಮ್ಮ ಆರ್ಡರ್ ಸಂಖ್ಯೆ ಮತ್ತು ಕಾರಣವನ್ನು ನೀಡಿ.'
+                                },
+                                'delivery': {
+                                    'english': 'Your delivery is scheduled for tomorrow between 2-4 PM. You\'ll receive an SMS confirmation.',
+                                    'hindi': 'आपकी डिलीवरी कल दोपहर 2-4 बजे के बीच निर्धारित है। आपको SMS पुष्टि मिलेगी।',
+                                    'tamil': 'உங்கள் டெலிவரி நாளை மதியம் 2-4 மணிக்கு இடையே திட்டமிடப்பட்டுள்ளது. நீங்கள் SMS உறுதிப்படுத்தல் பெறுவீர்கள்.',
+                                    'telugu': 'మీ డెలివరీ రేపటి మధ్యాహ్నం 2-4 గంటల మధ్య షెడ్యూల్ చేయబడింది. మీరు SMS నిర్ధారణను పొందుతారు.',
+                                    'kannada': 'ನಿಮ್ಮ ಡೆಲಿವರಿ ನಾಳೆ ಮಧ್ಯಾಹ್ನ 2-4 ಗಂಟೆಗಳ ನಡುವೆ ಷೆಡ್ಯೂಲ್ ಮಾಡಲಾಗಿದೆ. ನೀವು SMS ದೃಢೀಕರಣವನ್ನು ಪಡೆಯುತ್ತೀರಿ.'
+                                },
+                                'payment': {
+                                    'english': 'I see the payment failed. Please try using a different card or contact your bank.',
+                                    'hindi': 'मैं देख रहा हूं कि भुगतान विफल हुआ। कृपया अलग कार्ड का उपयोग करें या अपने बैंक से संपर्क करें।',
+                                    'tamil': 'பணம் செலுத்துதல் தோல்வியடைந்ததை நான் காண்கிறேன். தயவுசெய்து வேறு கார்டைப் பயன்படுத்தவும் அல்லது உங்கள் வங்கியை தொடர்பு கொள்ளவும்.',
+                                    'telugu': 'చెల్లింపు విఫలమైనట్లు నేను చూస్తున్నాను. దయచేసి వేరే కార్డ్‌ని ఉపయోగించండి లేదా మీ బ్యాంక్‌ని సంప్రదించండి.',
+                                    'kannada': 'ಪಾವತಿ ವಿಫಲವಾಗಿದೆ ಎಂದು ನಾನು ನೋಡುತ್ತಿದ್ದೇನೆ. ದಯವಿಟ್ಟು ವಿಭಿನ್ನ ಕಾರ್ಡ್ ಅನ್ನು ಬಳಸಿ ಅಥವಾ ನಿಮ್ಮ ಬ್ಯಾಂಕ್‌ನನ್ನು ಸಂಪರ್ಕಿಸಿ.'
+                                }
+                            };
+                            
+                            const response = responses[query][lang] || responses[query]['english'];
+                            voiceOutput.textContent = response;
+                        }, 1500);
+                    });
+                });
+            }
+
+            // Microphone interaction
+            micButton.addEventListener('click', function() {
+                const activeLang = document.querySelector('.lang-btn.active');
+                const lang = activeLang.getAttribute('data-lang');
+                
+                // Simulate voice recognition
+                this.style.background = '#f59e0b';
+                this.innerHTML = '<i class="fas fa-microphone-slash"></i>';
+                
+                setTimeout(() => {
+                    this.style.background = '#22c55e';
+                    this.innerHTML = '<i class="fas fa-check"></i>';
+                    
+                    // Simulate response based on language
+                    const responses = {
+                        'english': 'Hello! How can I help you today?',
+                        'hindi': 'नमस्ते! आज मैं आपकी कैसे मदद कर सकता हूं?',
+                        'tamil': 'வணக்கம்! இன்று நான் உங்களுக்கு எப்படி உதவ முடியும்?',
+                        'telugu': 'నమస్కారం! ఈరోజు నేను మీకు ఎలా సహాయపడగలను?',
+                        'kannada': 'ನಮಸ್ಕಾರ! ಇಂದು ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?'
+                    };
+                    
+                    voiceOutput.textContent = responses[lang] || responses['english'];
+                }, 2000);
+                
+                setTimeout(() => {
+                    this.style.background = 'var(--accent-primary)';
+                    this.innerHTML = '<i class="fas fa-microphone"></i>';
+                }, 3000);
+            });
+        }
+
+        function initializeExcelDemo() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const workflowSteps = document.querySelectorAll('.workflow-step');
+            
+            if (!tabBtns.length || !workflowSteps.length) return;
+
+            // Tab switching functionality
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const tab = this.getAttribute('data-tab');
+                    
+                    // Show corresponding workflow step
+                    workflowSteps.forEach(step => {
+                        step.classList.remove('active');
+                        if (step.getAttribute('data-step') === tab) {
+                            step.classList.add('active');
+                        }
+                    });
+                });
+            });
+
+            // Simulate workflow progression for monthly tab
+            let currentStep = 0;
+            
+            const progressWorkflow = () => {
+                if (currentStep < workflowSteps.length) {
+                    workflowSteps.forEach((step, index) => {
+                        step.classList.remove('active');
+                        if (index === currentStep) {
+                            step.classList.add('active');
+                        }
+                    });
+                    
+                    currentStep++;
+                    setTimeout(progressWorkflow, 3000);
+                }
+            };
+            
+            // Start workflow after a delay
+            setTimeout(progressWorkflow, 1000);
+        }
+
+        function initializeLegalDemo() {
+            const stageItems = document.querySelectorAll('.stage-item');
+            
+            if (!stageItems.length) return;
+
+            // Simulate document processing stages
+            let currentStage = 1;
+            
+            const progressStages = () => {
+                if (currentStage < stageItems.length) {
+                    stageItems.forEach((item, index) => {
+                        item.classList.remove('active', 'completed');
+                        if (index < currentStage) {
+                            item.classList.add('completed');
+                        } else if (index === currentStage) {
+                            item.classList.add('active');
+                        }
+                    });
+                    
+                    currentStage++;
+                    setTimeout(progressStages, 3000);
+                }
+            };
+            
+            // Start stage progression after a delay
+            setTimeout(progressStages, 1000);
+        }
+
+        function initializeMomDemo() {
+            const recordButton = document.querySelector('.record-button');
+            const processingSteps = document.querySelectorAll('.processing-step');
+            
+            if (!recordButton || !processingSteps.length) return;
+
+            // Recording simulation
+            recordButton.addEventListener('click', function() {
+                // Start recording
+                this.style.background = '#ef4444';
+                this.innerHTML = '<i class="fas fa-stop"></i>';
+                this.style.animation = 'pulse 1s infinite';
+                
+                // Simulate processing pipeline
+                let currentStep = 1;
+                
+                const progressPipeline = () => {
+                    if (currentStep < processingSteps.length) {
+                        processingSteps.forEach((step, index) => {
+                            step.classList.remove('active', 'completed');
+                            if (index < currentStep) {
+                                step.classList.add('completed');
+                            } else if (index === currentStep) {
+                                step.classList.add('active');
+                            }
+                        });
+                        
+                        currentStep++;
+                        setTimeout(progressPipeline, 2000);
+                    } else {
+                        // All steps completed
+                        recordButton.style.background = '#22c55e';
+                        recordButton.innerHTML = '<i class="fas fa-check"></i>';
+                        recordButton.style.animation = 'none';
+                        
+                        // Show success message
+                        setTimeout(() => {
+                            recordButton.style.background = 'var(--accent-primary)';
+                            recordButton.innerHTML = '<i class="fas fa-microphone"></i>';
+                        }, 3000);
+                    }
+                };
+                
+                // Start pipeline after recording
+                setTimeout(progressPipeline, 1000);
+            });
+        }
+
         function initializeChatDemo() {
             const chatMessages = document.getElementById('chatMessages');
             if (!chatMessages) return;
