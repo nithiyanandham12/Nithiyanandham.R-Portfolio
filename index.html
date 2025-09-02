@@ -641,9 +641,10 @@
             margin-bottom: 80px;
             padding: 40px 0;
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
+            will-change: opacity, transform;
         }
 
         section.visible {
@@ -691,7 +692,7 @@
         /* Clean scroll animations without glitches */
         .card, .project-card, .skill-category, .timeline-item, .cert-item, .contact-item, .about-card, .achievement-card, .summary-card {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(35px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
             will-change: opacity, transform;
             cursor: pointer;
@@ -702,6 +703,7 @@
         .achievement-card.visible, .summary-card.visible {
             opacity: 1;
             transform: translateY(0);
+            transition-delay: 0s;
         }
 
         /* Interactive card states */
@@ -1838,6 +1840,35 @@
             height: 500px;
             display: flex;
             flex-direction: column;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .project-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0s;
+        }
+
+        /* Enhanced Featured Projects section animation */
+        #projects {
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        #projects.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #projects .section-header {
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition-delay: 0.1s;
+        }
+
+        #projects.visible .section-header {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .project-item:hover {
@@ -7581,7 +7612,7 @@
             </div>
         </section>
 
-        <section id="projects" class="fade-in">
+        <section id="projects">
             <div class="section-header">
                 <h2 class="section-title">🚀 Featured Projects</h2>
                 <p class="section-subtitle">Innovative solutions that drive real business impact</p>
@@ -8292,26 +8323,95 @@
     </footer>
 
     <script>
-        // Clean Intersection Observer for smooth animations
+        // Enhanced Intersection Observer for perfect timing
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: [0.1, 0.2, 0.3],
+            rootMargin: '0px 0px -80px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Perfect timing - no delay needed
                     entry.target.classList.add('visible');
                 } else {
-                    entry.target.classList.remove('visible');
+                    // Only remove visible class when element is completely out of view
+                    if (entry.intersectionRatio < 0.05) {
+                        entry.target.classList.remove('visible');
+                    }
                 }
             });
         }, observerOptions);
 
-        // Observe all sections and individual elements
-        document.querySelectorAll('section, .card, .project-card, .skill-category, .timeline-item, .cert-item, .contact-item, .about-card, .achievement-card, .summary-card, .journey-item').forEach(element => {
+        // Observe all sections and individual elements with staggered animations
+        const elementsToObserve = document.querySelectorAll('section, .card, .project-card, .skill-category, .timeline-item, .cert-item, .contact-item, .about-card, .achievement-card, .summary-card, .journey-item, .project-item');
+        
+        elementsToObserve.forEach((element, index) => {
+            // Add staggered delay for grid items
+            if (element.classList.contains('card') || element.classList.contains('project-card') || 
+                element.classList.contains('skill-category') || element.classList.contains('about-card') || 
+                element.classList.contains('achievement-card') || element.classList.contains('project-item')) {
+                element.style.transitionDelay = `${Math.min(index * 0.1, 0.8)}s`;
+            }
             observer.observe(element);
         });
+
+        // Fallback: Ensure sections become visible after a delay if they haven't been triggered
+        setTimeout(() => {
+            document.querySelectorAll('section').forEach(section => {
+                if (!section.classList.contains('visible')) {
+                    section.classList.add('visible');
+                }
+            });
+        }, 2000);
+
+        // Additional fallback: Make sections visible on scroll if they're still hidden
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('section:not(.visible)').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+
+        // Special handling for Featured Projects section - ensure it's visible when Work Experience is scrolled past
+        function handleWorkExperienceScroll() {
+            let workExpSection = null;
+            let featuredProjectsSection = null;
+            
+            // Find sections by their content
+            document.querySelectorAll('section').forEach(section => {
+                const title = section.querySelector('h2, h3');
+                if (title) {
+                    if (title.textContent.includes('Work Experience')) {
+                        workExpSection = section;
+                    } else if (title.textContent.includes('Featured Projects')) {
+                        featuredProjectsSection = section;
+                    }
+                }
+            });
+            
+            if (workExpSection && featuredProjectsSection) {
+                const workExpRect = workExpSection.getBoundingClientRect();
+                const featuredRect = featuredProjectsSection.getBoundingClientRect();
+                
+                // Perfect timing: Trigger Featured Projects when Work Experience is 80% scrolled past
+                if (workExpRect.bottom < window.innerHeight * 0.8 && featuredRect.top < window.innerHeight * 0.9) {
+                    featuredProjectsSection.classList.add('visible');
+                    
+                    // Also trigger individual project items with staggered animation
+                    const projectItems = featuredProjectsSection.querySelectorAll('.project-item');
+                    projectItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 150); // 150ms stagger between each project
+                    });
+                }
+            }
+        }
+
+        window.addEventListener('scroll', handleWorkExperienceScroll);
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
@@ -8387,6 +8487,35 @@
 
         // Start typing animation after page load
         setTimeout(typeWriter, 1000);
+
+        // Ensure Featured Projects section is always visible with perfect timing
+        function ensureFeaturedProjectsVisible() {
+            // Find Featured Projects section by text content
+            const allSections = document.querySelectorAll('section');
+            let featuredProjectsSection = null;
+            
+            allSections.forEach(section => {
+                const title = section.querySelector('h2, h3');
+                if (title && title.textContent.includes('Featured Projects')) {
+                    featuredProjectsSection = section;
+                }
+            });
+            
+            if (featuredProjectsSection && !featuredProjectsSection.classList.contains('visible')) {
+                // Add a subtle entrance effect
+                featuredProjectsSection.style.transitionDelay = '0.2s';
+                featuredProjectsSection.classList.add('visible');
+                console.log('Featured Projects section made visible with perfect timing');
+            }
+        }
+
+        // Check for Featured Projects section visibility multiple times
+        setTimeout(ensureFeaturedProjectsVisible, 1000);
+        setTimeout(ensureFeaturedProjectsVisible, 3000);
+        setTimeout(ensureFeaturedProjectsVisible, 5000);
+
+        // Also check on scroll events
+        window.addEventListener('scroll', ensureFeaturedProjectsVisible);
 
         // Enhanced hover effects with 3D transforms
         document.querySelectorAll('.card, .project-card, .skill-category, .cert-item, .contact-item').forEach(card => {
